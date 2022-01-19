@@ -1,0 +1,47 @@
+<div class="side-bar-desktop">
+    <ul class="features-list">
+        <li class="features-item active">
+            <a class="d-flex align-items-center">
+                <img src="images/icons/th-large-active.svg" class="active" alt="">
+                <img src="images/icons/th-large.svg" alt="">
+                <span class="features-item-text">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="features-item">
+            <a class="d-flex align-items-center">
+            <img src="images/icons/pen-square.svg" alt="">
+            <img src="images/icons/pen-square-active.svg" class="active" alt="">
+            <span class="features-item-text">Register</span>
+        </a>
+        </li>
+
+        <li class="features-item menu_disable">
+            <a class="d-flex align-items-center">
+            <img src="images/icons/comment-lines.svg" alt="">
+            <span class="features-item-text">Starred</span>
+        </a>
+        </li>
+        <li class="features-item menu_disable">
+            <a class="d-flex align-items-center">
+            <img src="images/icons/wrench.svg" alt="">
+            <span class="features-item-text">Sent</span>
+        </a>
+        </li>
+        <button id="click-open">click</button>
+    </ul>
+
+
+
+
+</div>
+<script type="text/javascript">
+    {
+        let sideBar = document.querySelector('.side-bar-desktop');
+        let arrowCollapse = document.querySelector('#click-open');
+        arrowCollapse.onclick = () => {
+            sideBar.classList.toggle('collapse-sidebar');
+            arrowCollapse.classList.toggle('collapse-sidebar');
+        };
+    }
+</script>
