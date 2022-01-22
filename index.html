@@ -31,20 +31,38 @@
         });
     </script>
 
+    <script type='text/javascript'>
+        $.get('partials/_header.html', function (response) {
+            $('#header_include').html(response);
+        });
+    </script>
+
+    <script type='text/javascript'>
+        $.get('partials/_main.html', function (response) {
+            $('#main_include').html(response);
+        });
+    </script>
+
 <script type='text/javascript'>
-    $.get('partials/_header.html', function (response) {
-        $('#header_include').html(response);
+    $.get('partials/_footer.html', function (response) {
+        $('#footer_include').html(response);
     });
 </script>
     <!-- include end -->
 </head>
-
 <body>
     <div id="header_include"></div>
-    <div id="sidebar_include"></div>
+    <div id="main">
+        <div id="sidebar_include"></div>
+        <div id="main_include">
+        </div>
+    </div>
+
+    <script src="js/custom.js"></script>
 
     <!-- script -->
     <script src="vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
 </body>
 

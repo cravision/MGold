@@ -39,9 +39,10 @@
     {
         let sideBar = document.querySelector('.side-bar-desktop');
         let arrowCollapse = document.querySelector('#click-open');
+        let togglewidth = document.querySelector('#main');
         arrowCollapse.onclick = () => {
             sideBar.classList.toggle('collapse-sidebar');
-            arrowCollapse.classList.toggle('collapse-sidebar');
+            togglewidth.classList.toggle('toggle_width')
         };
     }
 </script>
