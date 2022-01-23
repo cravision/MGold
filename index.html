@@ -26,27 +26,21 @@
 
     <!-- include start -->
     <script type='text/javascript'>
-        $.get('partials/_sidenav.html', function (response) {
-            $('#sidebar_include').html(response);
-        });
+$(function(){ $("#sidebar_include").load("partials/_sidenav.html"); }); 
     </script>
 
     <script type='text/javascript'>
-        $.get('partials/_header.html', function (response) {
-            $('#header_include').html(response);
-        });
+$(function(){ $("#header_include").load("partials/_header.html"); }); 
     </script>
 
     <script type='text/javascript'>
-        $.get('partials/_main.html', function (response) {
-            $('#main_include').html(response);
-        });
+$(function(){ $("#main_include").load("partials/_main.html"); }); 
+
     </script>
 
 <script type='text/javascript'>
-    $.get('partials/_footer.html', function (response) {
-        $('#footer_include').html(response);
-    });
+$(function(){ $("#footer_include").load("partials/_footer.html"); }); 
+
 </script>
     <!-- include end -->
 </head>
