@@ -5,10 +5,25 @@ body {
     background-color: #fff;
 }
 
-
 [disabled] {
     background-image: unset !important;
     background-color: #D3D3D3 !important;
+}
+
+input:focus{
+outline:none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* header */
@@ -67,7 +82,7 @@ header {
 }
 
 .tooltips_title{
-    font-size:15px;
+    font-size:13px;
     color:#0DB14B;
     margin-bottom:2px;
     font-weight: bold;
@@ -82,6 +97,7 @@ header {
     color:#999999;
     background-color:#EDFAF1;
     font-weight:normal;
+    text-align:left;
     font-size:13px;
     border:1.5px solid #0DB14B;
     border-radius:30px;
@@ -580,3 +596,193 @@ background-color:rgb(26, 198, 156,0.8);
     clear: both;
 }
 
+
+/* Modal - buy Gold */
+.modal-content{
+    padding:20px;
+    border-radius: 60px !important;
+    border: 0px;
+}
+
+.modal-footer{
+    border-top:0;
+}
+
+.modal_title{
+    color:#999999;
+    font-weight: 300;
+    text-align: center;
+    font-size:28px
+}
+
+.modal_close{
+    position: relative;
+    top: -40px;
+    height:0;
+    right: 25px;
+    font-size: 28px;
+    color: #C4C4C4;
+    text-align: right;
+}
+
+.modal_prices{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #F5F5F7;
+    color:#999;
+    border-radius: 20px;
+}
+
+.modal_prices .current_prices{
+    font-size:12px;
+    padding:5px;
+    width: 98%;
+    text-align: center;
+}
+
+.modal_prices span{
+    color:#57C4CC;
+    font-size:28px;
+    font-weight: bold;
+    margin-left:15px
+}
+
+.prices_notice{
+    width:10%;
+    font-size:25px;
+    color:#C4C4C4;
+    text-align: center;
+}
+
+.prices_notice:hover{
+    color:#C4C4C4;
+    cursor: pointer;
+}
+
+.modal_butinput{
+    padding:10px;
+    border:1px solid #D3D3D3;
+    border-radius:15px;
+    margin:10px 0px;
+    text-align: center;
+    font-size:12px;
+    color:#999
+}
+.modal_prices_input{
+    border-bottom:1px solid #D3D3D3;
+   text-align: right;
+}
+
+.modal_prices_input input{
+    font-size:48px;
+    font-weight: bold;
+    border: 0;
+    width:59%;
+    color:#999;
+    padding:0px 10px
+}
+
+.modal_prices_input input::placeholder{
+    color:#999;
+}
+
+.currency-symbol{
+    font-size:20px;
+    color:#999;
+}
+
+.modal_pricegram{
+    font-size:28px;
+    font-weight: bold;
+    padding:10px
+}
+
+.modal_pricegram span{
+    font-size:20px;
+    font-weight: 500;
+}
+
+
+/* select option with images and text*/
+.payment_picker{
+    display: none; 
+  }
+  
+  #a{
+    padding-left: 0px;
+  }
+  
+  #a img, .btn-select img{
+    width: 12px;
+    
+  }
+  
+  #a li{
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  #a li:hover{
+   background-color: #F4F3F3;
+  }
+  
+  #a li img{
+    margin: 5px;
+    
+    border-radius: 50%;
+    border:1px solid #D3D3D3
+  }
+  
+  #a li span, .btn-select li span{
+    margin-left: 30px;
+  }
+  
+  /* item list */
+  
+  .selected{
+    display: none;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 5px;
+    
+  }
+  
+  .open{
+    display: show !important;
+  }
+  
+  .btn-select{
+    margin-top: 10px;
+    width: 100%;
+    max-width: 350px;
+    height: 34px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+   
+  }
+  .btn-select li{
+    list-style: none;
+    float: left;
+    padding-bottom: 0px;
+  }
+  
+  .btn-select:hover li{
+    margin-left: 0px;
+  }
+  
+  .btn-select:hover{
+    background-color: #F4F3F3;
+    border: 1px solid transparent;
+    box-shadow: inset 0 0px 0px 1px #ccc;
+    
+    
+  }
+  
+  .btn-select:focus{
+     outline:none;
+  }

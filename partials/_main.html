@@ -12,7 +12,6 @@
     <div class="d-flex justify-content-between">
         <div class="buysell_bx">
             <div class="bx_title">
-
                 Buy Price
             </div>
             <div class="prices_details">
@@ -27,7 +26,7 @@
                     </div>
                     <!-- <canvas id="performaneLine"></canvas> -->
                 </div>
-                <a href="#" class="buy_btn">Buy Now</a>
+                <a type="button" class="buy_btn" data-bs-toggle="modal" data-bs-target="#buy">Buy Now</a>
             </div>
         </div>
         <div class="buysell_bx">
@@ -112,182 +111,157 @@
             <div class="pricechart_timeline">
                 <ul class="pricechart_tabs-list">
                     <li class="active"><a href="#tab1">1d</a></li>
-                    <li ><a href="#tab2">2w</a></li>
-                    <li ><a href="#tab3">1m</a></li>
-                    <li ><a href="#tab4">6m</a></li>
-                    <li ><a href="#tab5">1y</a></li>
-                 </ul>
-                 <button><img src="images/icons/inbox-in.svg" alt=""></button>
+                    <li><a href="#tab2">2w</a></li>
+                    <li><a href="#tab3">1m</a></li>
+                    <li><a href="#tab4">6m</a></li>
+                    <li><a href="#tab5">1y</a></li>
+                </ul>
+                <button><img src="images/icons/inbox-in.svg" alt=""></button>
             </div>
         </div>
 
         <div class="pricechart_tabs">
             <div id="tab1" class="pricechart_tab">
-               chart1
-             </div>
-             <div id="tab2" class="pricechart_tab">
+                chart1
+            </div>
+            <div id="tab2" class="pricechart_tab">
                 chart2
-             </div>
-             <div id="tab3" class="pricechart_tab">
+            </div>
+            <div id="tab3" class="pricechart_tab">
                 chart3
-             </div>
-             <div id="tab4" class="pricechart_tab">
+            </div>
+            <div id="tab4" class="pricechart_tab">
                 chart4
-             </div>
-             <div id="tab5" class="pricechart_tab">
+            </div>
+            <div id="tab5" class="pricechart_tab">
                 chart5
-             </div>
-           
-           </div>
+            </div>
+
         </div>
     </div>
 </div>
+</div>
 <div id="footer_include"></div>
+
+<!-- buy-modal -->
+<div class="modal fade" id="buy" tabindex="-1" aria-labelledby="buy" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal_title">
+                Buy Gold
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                <div class="modal_prices">
+                    <div class="current_prices">
+                        CURRENT GOLD PRICE &nbsp;
+                        <span>RM244.46/g</span>
+                    </div>
+                    <a class="prices_notice notice_tooltips">
+                        <i class="fal fa-info-circle"></i>
+                        <div class="bottom">
+                            <div class="tooltips_title">Rates update automatically</div>
+                            <div>
+                                The price shown is based on the latest market rate, and will fluctuate accordingly</div>
+                            <i></i>
+                        </div>
+                    </a>
+                </div>
+                <form action="">
+                    <div class="modal_butinput">
+                        Enter Amount <span style="color:#57C4CC">*Min RM5</span>
+                        <div class="modal_prices_input">
+                            <input type="number" class="currency" min="0" placeholder="0.00" />
+                        </div>
+                        <div class="modal_pricegram">
+                            0.000 <span>g</span>
+                        </div>
+                    </div>
+
+                    <select class="payment_picker">
+                        <option value="gopayz" class="test"
+                            data-thumbnail="images/payment/gopayz.png">
+                            English</option>
+                        <option value="fpx"
+                            data-thumbnail="images/payment/fpx.png">
+                            Engllish (AU)</option>
+                    </select>
+
+                    <div class="payment_select">
+                        <button class="btn-select" value=""></button>
+                        <div class="selected">
+                            <ul id="a"></ul>
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- pricechart - tab -->
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function () {
 
-    $('.pricechart_tab:first-child').css('display','block');
-    
-      $(".pricechart_tabs-list li").click(function(){
-         var tabid = $(this).find("a").attr("href");
-         $(".pricechart_tabs-list li,.pricechart_tabs div.pricechart_tab").removeClass("active");   // removing active class from tab
-    
-         $(".pricechart_tab").hide();   // hiding open tab
-         $(tabid).show();    // show tab
-         $(this).addClass("active"); //  adding active class to clicked tab
-    
-      });
-    
-    });
-    </script>
+        $('.pricechart_tab:first-child').css('display', 'block');
 
-<script>
-    (function ($) {
-        'use strict';
-        $(function () {
-            if ($("#performaneLine").length) {
-                var graphGradient = document.getElementById("performaneLine").getContext('2d');
-                var graphGradient2 = document.getElementById("performaneLine").getContext('2d');
-                var saleGradientBg = graphGradient.createLinearGradient(5, 0, 5, 100);
-                saleGradientBg.addColorStop(0, 'rgba(26, 115, 232, 0.18)');
-                saleGradientBg.addColorStop(1, 'rgba(26, 115, 232, 0.02)');
-                var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
-                saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
-                saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
-                var salesTopData = {
-                    labels: ["SUN", "sun", "MON", "mon", "TUE", "tue", "WED", "wed", "THU", "thu",
-                        "FRI", "fri", "SAT"
-                    ],
-                    datasets: [{
-                        label: 'This week',
-                        data: [50, 110, 60, 290, 200, 115, 130, 170, 90, 210, 240, 280, 200],
-                        backgroundColor: saleGradientBg,
-                        borderColor: [
-                            '#1F3BB3',
-                        ],
-                        borderWidth: 1,
-                        fill: true, // 3: no fill
-                        pointBorderWidth: 1.5,
-                        pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-                        pointHoverRadius: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-                        pointBackgroundColor: ['#1F3BB3)', '#1F3BB3', '#1F3BB3', '#1F3BB3',
-                            '#1F3BB3)', '#1F3BB3', '#1F3BB3', '#1F3BB3', '#1F3BB3)',
-                            '#1F3BB3', '#1F3BB3', '#1F3BB3', '#1F3BB3)'
-                        ],
-                        pointBorderColor: ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff',
-                            '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff',
-                        ],
-                    }, {
-                        label: 'Last week',
-                        data: [30, 150, 190, 250, 120, 150, 130, 20, 30, 15, 40, 95, 180],
-                        backgroundColor: saleGradientBg2,
-                        borderColor: [
-                            '#52CDFF',
-                        ],
-                        borderWidth: 1.5,
-                        fill: true, // 3: no fill
-                        pointBorderWidth: 1,
-                        pointRadius: [0, 0, 0, 4, 0],
-                        pointHoverRadius: [0, 0, 0, 2, 0],
-                        pointBackgroundColor: ['#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF',
-                            '#52CDFF)', '#52CDFF', '#52CDFF', '#52CDFF', '#52CDFF)',
-                            '#52CDFF', '#52CDFF', '#52CDFF', '#52CDFF)'
-                        ],
-                        pointBorderColor: ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff',
-                            '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff',
-                        ],
-                    }]
-                };
+        $(".pricechart_tabs-list li").click(function () {
+            var tabid = $(this).find("a").attr("href");
+            $(".pricechart_tabs-list li,.pricechart_tabs div.pricechart_tab").removeClass(
+                "active"); // removing active class from tab
 
-                var salesTopOptions = {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        yAxes: [{
-                            gridLines: {
-                                display: true,
-                                drawBorder: false,
-                                color: "#F0F0F0",
-                                zeroLineColor: '#F0F0F0',
-                            },
-                            ticks: {
-                                beginAtZero: false,
-                                autoSkip: true,
-                                maxTicksLimit: 4,
-                                fontSize: 10,
-                                color: "#6B778C"
-                            }
-                        }],
-                        xAxes: [{
-                            gridLines: {
-                                display: false,
-                                drawBorder: false,
-                            },
-                            ticks: {
-                                beginAtZero: false,
-                                autoSkip: true,
-                                maxTicksLimit: 7,
-                                fontSize: 10,
-                                color: "#6B778C"
-                            }
-                        }],
-                    },
-                    legend: false,
-                    legendCallback: function (chart) {
-                        var text = [];
-                        text.push('<div class="chartjs-legend"><ul>');
-                        for (var i = 0; i < chart.data.datasets.length; i++) {
-                            console.log(chart.data.datasets[i]); // see what's inside the obj.
-                            text.push('<li>');
-                            text.push('<span style="background-color:' + chart.data.datasets[i]
-                                .borderColor + '">' + '</span>');
-                            text.push(chart.data.datasets[i].label);
-                            text.push('</li>');
-                        }
-                        text.push('</ul></div>');
-                        return text.join("");
-                    },
-
-                    elements: {
-                        line: {
-                            tension: 0.4,
-                        }
-                    },
-                    tooltips: {
-                        backgroundColor: 'rgba(31, 59, 179, 1)',
-                    }
-                }
-                var salesTop = new Chart(graphGradient, {
-                    type: 'line',
-                    data: salesTopData,
-                    options: salesTopOptions
-                });
-                document.getElementById('performance-line-legend').innerHTML = salesTop.generateLegend();
-            }
-
-
+            $(".pricechart_tab").hide(); // hiding open tab
+            $(tabid).show(); // show tab
+            $(this).addClass("active"); //  adding active class to clicked tab
 
         });
-    })(jQuery);
+
+    });
+</script>
+
+
+<!-- Modal- Prices' input field  -->
+<script>
+
+var langArray = [];
+$('.payment_picker option').each(function(){
+  var img = $(this).attr("data-thumbnail");
+  var text = this.innerText;
+  var value = $(this).val();
+  var item = '<li><img src="'+ img +'" alt="" value="'+value+'"/><span>'+ text +'</span></li>';
+  langArray.push(item);
+})
+
+$('#a').html(langArray);
+
+//Set the button value to the first el of the array
+$('.btn-select').html(langArray[0]);
+$('.btn-select').attr('value', 'gopayz');
+
+//change button stuff on click
+$('#a li').click(function(){
+   var img = $(this).find('img').attr("src");
+   var value = $(this).find('img').attr('value');
+   var text = this.innerText;
+   var item = '<li><img src="'+ img +'" alt="" /><span>'+ text +'</span></li>';
+  $('.btn-select').html(item);
+  $('.btn-select').attr('value', value);
+  $(".selected").toggle();
+  //console.log(value);
+});
+
+$(".btn-select").click(function(){
+        $(".selected").toggle();
+    });
+
+
+
 </script>
