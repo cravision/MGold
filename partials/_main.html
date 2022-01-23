@@ -1,0 +1,267 @@
+<div class="data_row2">
+    <div class="d-flex justify-content-between">
+        <div class="dashboard_title">
+            Trade Gold at Today’s Price
+            <span class="dashboard_subtitle"> (Last updated 09 November 2021, 01:10 pm) </span>
+        </div>
+        <div class="buysell_status">
+            Status <span class="green_status"> </span>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <div class="buysell_bx">
+            <div class="bx_title">
+                Buy Price
+            </div>
+            <div class="prices_details">
+                <div class="d-flex">
+                    <div class="prices_rates_up">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span>239.54</span><img src="images/icons/arrow_up.svg" alt="">
+                        </div>
+                        <div class="per_gram">
+                            PER GRAM
+                        </div>
+                    </div>
+                    <!-- <canvas id="performaneLine"></canvas> -->
+                </div>
+                <a type="button" class="buy_btn" data-bs-toggle="modal" data-bs-target="#buy">Buy Now</a>
+            </div>
+        </div>
+        <div class="buysell_bx">
+            <div class="bx_title">
+                Sell Price
+            </div>
+            <div class="prices_details">
+                <div class="d-flex">
+                    <div class="prices_rates_down">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span>239.54</span><img src="images/icons/arrow_down.svg" alt="">
+                        </div>
+                        <div class="per_gram">
+                            PER GRAM
+                        </div>
+                    </div>
+                    <!-- <canvas id="performaneLine"></canvas> -->
+                </div>
+                <a href="#" class="sell_btn">Sell Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="data_row3">
+    <button class="shortclick green_active">
+        <img src="images/icons/bullseye-arrow.svg" alt="">
+        <span>Start New Goal</span>
+    </button>
+    <button class="shortclick">
+        <img src="images/icons/alarm-plus.svg" alt="">
+        <span>Future Buy</span>
+    </button>
+    <button class="shortclick">
+        <img src="images/icons/Union.svg" alt="">
+        <span>Future Sell</span>
+    </button>
+    <button class="shortclick">
+        <img src="images/icons/sync.svg" alt="">
+        <span>Convert</span>
+    </button>
+</div>
+
+<div class="data_row4">
+    <div class="dashboard_title">
+        News & Tips
+    </div>
+    <div class="home_new">
+        <div class="home_bcard">
+            <div class="home_bcard__header">
+                <img src="images/demo/image 50.jpg" alt="card__image" class="card__image" width="600">
+            </div>
+            <div class="home_bcard__body">
+                <span>Watch a short video to get 1 FREE SPIN instantly</span>
+            </div>
+        </div>
+        <div class="home_bcard">
+            <div class="home_bcard__header">
+                <img src="images/demo/image 21.jpg" alt="card__image" class="card__image" width="600">
+            </div>
+            <div class="home_bcard__body">
+                <span>Stand a chance to WIN 1 GRAM of digital gold</span>
+            </div>
+        </div>
+        <div class="home_bcard">
+            <div class="home_bcard__header">
+                <img src="images/demo/image 54.jpg" alt="card__image" class="card__image" width="600">
+            </div>
+            <div class="home_bcard__body">
+                <span>Merry Christmas to all our customers!</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="data_row5">
+    <div class="price_charts">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="pricechart_details">
+                <span class="pricechart_up"><img src="images/icons/chart-line-up.svg" alt=""> RM244.80</span>
+                <span class="pricechart_down"><img src="images/icons/chart-line-down.svg" alt=""> RM244.80</span>
+            </div>
+            <div class="pricechart_timeline">
+                <ul class="pricechart_tabs-list">
+                    <li class="active"><a href="#tab1">1d</a></li>
+                    <li><a href="#tab2">2w</a></li>
+                    <li><a href="#tab3">1m</a></li>
+                    <li><a href="#tab4">6m</a></li>
+                    <li><a href="#tab5">1y</a></li>
+                </ul>
+                <button><img src="images/icons/inbox-in.svg" alt=""></button>
+            </div>
+        </div>
+
+        <div class="pricechart_tabs">
+            <div id="tab1" class="pricechart_tab">
+                chart1
+            </div>
+            <div id="tab2" class="pricechart_tab">
+                chart2
+            </div>
+            <div id="tab3" class="pricechart_tab">
+                chart3
+            </div>
+            <div id="tab4" class="pricechart_tab">
+                chart4
+            </div>
+            <div id="tab5" class="pricechart_tab">
+                chart5
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+<div id="footer_include"></div>
+
+<!-- buy-modal -->
+<div class="modal fade" id="buy" tabindex="-1" aria-labelledby="buy" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal_title">
+                Buy Gold
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                <div class="modal_prices">
+                    <div class="current_prices">
+                        CURRENT GOLD PRICE &nbsp;
+                        <span>RM244.46/g</span>
+                    </div>
+                    <a class="prices_notice notice_tooltips">
+                        <i class="fal fa-info-circle"></i>
+                        <div class="bottom">
+                            <div class="tooltips_title">Rates update automatically</div>
+                            <div>
+                                The price shown is based on the latest market rate, and will fluctuate accordingly</div>
+                            <i></i>
+                        </div>
+                    </a>
+                </div>
+                <form action="">
+                    <div class="modal_butinput">
+                        Enter Amount <span style="color:#57C4CC">*Min RM5</span>
+                        <div class="modal_prices_input">
+                            <input type="number" class="currency" min="0" placeholder="0.00" />
+                        </div>
+                        <div class="modal_pricegram">
+                            0.000 <span>g</span>
+                        </div>
+                    </div>
+
+                    <select class="payment_picker">
+                        <option value="gopayz" class="test"
+                            data-thumbnail="images/payment/gopayz.png">
+                            English</option>
+                        <option value="fpx"
+                            data-thumbnail="images/payment/fpx.png">
+                            Engllish (AU)</option>
+                    </select>
+
+                    <div class="payment_select">
+                        <button class="btn-select" value=""></button>
+                        <div class="selected">
+                            <ul id="a"></ul>
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- pricechart - tab -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.pricechart_tab:first-child').css('display', 'block');
+
+        $(".pricechart_tabs-list li").click(function () {
+            var tabid = $(this).find("a").attr("href");
+            $(".pricechart_tabs-list li,.pricechart_tabs div.pricechart_tab").removeClass(
+                "active"); // removing active class from tab
+
+            $(".pricechart_tab").hide(); // hiding open tab
+            $(tabid).show(); // show tab
+            $(this).addClass("active"); //  adding active class to clicked tab
+
+        });
+
+    });
+</script>
+
+
+<!-- Modal- Prices' input field  -->
+<script>
+
+var langArray = [];
+$('.payment_picker option').each(function(){
+  var img = $(this).attr("data-thumbnail");
+  var text = this.innerText;
+  var value = $(this).val();
+  var item = '<li><img src="'+ img +'" alt="" value="'+value+'"/><span>'+ text +'</span></li>';
+  langArray.push(item);
+})
+
+$('#a').html(langArray);
+
+//Set the button value to the first el of the array
+$('.btn-select').html(langArray[0]);
+$('.btn-select').attr('value', 'gopayz');
+
+//change button stuff on click
+$('#a li').click(function(){
+   var img = $(this).find('img').attr("src");
+   var value = $(this).find('img').attr('value');
+   var text = this.innerText;
+   var item = '<li><img src="'+ img +'" alt="" /><span>'+ text +'</span></li>';
+  $('.btn-select').html(item);
+  $('.btn-select').attr('value', value);
+  $(".selected").toggle();
+  //console.log(value);
+});
+
+$(".btn-select").click(function(){
+        $(".selected").toggle();
+    });
+
+
+
+</script>
