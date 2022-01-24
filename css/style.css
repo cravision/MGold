@@ -661,9 +661,9 @@ background-color:rgb(26, 198, 156,0.8);
 }
 
 .modal_butinput{
-    padding:10px;
+    padding:10px 20px;
     border:1px solid #D3D3D3;
-    border-radius:15px;
+    border-radius:50px;
     margin:10px 0px;
     text-align: center;
     font-size:12px;
@@ -704,85 +704,72 @@ background-color:rgb(26, 198, 156,0.8);
 }
 
 
-/* select option with images and text*/
-.payment_picker{
-    display: none; 
+/* Payment Method - Modal  */
+.dd-select {
+    border-radius: 30px !important;
+    border: solid 1px #ccc !important;
+    position: relative !important;
+    cursor: pointer !important;
+    width:100% !important;
+    background-color:#fff !important;
+    padding:8px;
+    z-index:2001 !important;
   }
-  
-  #a{
-    padding-left: 0px;
+
+  .dd-selected-description{
+      display:none !important;
   }
-  
-  #a img, .btn-select img{
-    width: 12px;
-    
+  .dd-options{
+      width:100% !important;
+      padding-top: 22px !important;
+    margin-top: -22px !important;
+    border-radius: 0px !important;
+    border-bottom-left-radius: 40px !important;
+    border-bottom-right-radius: 40px !important;
+    box-shadow:unset !important
   }
-  
-  #a li{
-    list-style: none;
+
+
+  .dd-option:hover {
+    background: #fff !important;
+}
+
+  .dd-pointer {
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 36px !important;
+    top: 50%;
+
+}
+
+.dd-option-image{
+    border-radius: 50% !important;
+    border:1px solid #D3D3D3;
+}
+
+.dd-selected-text{
+    color:#555;
+    font-weight: 500;
+    font-size:14px;
     padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  
-  #a li:hover{
-   background-color: #F4F3F3;
-  }
-  
-  #a li img{
-    margin: 5px;
-    
-    border-radius: 50%;
-    border:1px solid #D3D3D3
-  }
-  
-  #a li span, .btn-select li span{
-    margin-left: 30px;
-  }
-  
-  /* item list */
-  
-  .selected{
-    display: none;
-    width: 100%;
-    max-width: 350px;
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 5px;
-    
-  }
-  
-  .open{
-    display: show !important;
-  }
-  
-  .btn-select{
-    margin-top: 10px;
-    width: 100%;
-    max-width: 350px;
-    height: 34px;
-    border-radius: 5px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-   
-  }
-  .btn-select li{
-    list-style: none;
-    float: left;
-    padding-bottom: 0px;
-  }
-  
-  .btn-select:hover li{
-    margin-left: 0px;
-  }
-  
-  .btn-select:hover{
-    background-color: #F4F3F3;
-    border: 1px solid transparent;
-    box-shadow: inset 0 0px 0px 1px #ccc;
-    
-    
-  }
-  
-  .btn-select:focus{
-     outline:none;
-  }
+    padding-left: 5px;
+}
+
+.dd-selected-image{
+    width: 30px;
+    border-radius: 50% !important;
+    border:1px solid #D3D3D3;
+}
+
+.dd-container{
+    width:100% !important;
+}
+
+.dd-selected {
+    padding: 0px 19px;
+}
+
+.dd-option-selected {
+    background: #fff !important;
+}
