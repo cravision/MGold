@@ -465,38 +465,6 @@ footer span{
     margin-right: 15px
 }
 
-.home_new {
-    display: flex;
-    justify-content: space-around;
-}
-
-.home_bcard__header img {
-    max-width: 100%;
-    max-height: 156px;
-    display: block;
-    object-fit: cover;
-}
-
-.home_bcard {
-    display: flex;
-    flex-direction: column;
-    width: 32%;
-    overflow: hidden;
-    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
-    border-radius: 1em;
-    background: #ffffff;
-}
-
-.home_bcard__body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    color: #555555;
-    gap: 0.5rem;
-    font-size: 18px;
-    font-weight: bold;
-}
-
 .price_charts {
     background-color: #fff;
     padding: 20px
@@ -599,7 +567,7 @@ background-color:rgb(26, 198, 156,0.8);
 
 /* Modal - buy Gold */
 .modal-content{
-    padding:20px;
+    padding:20px 60px;
     border-radius: 60px !important;
     border: 0px;
 }
@@ -618,11 +586,16 @@ background-color:rgb(26, 198, 156,0.8);
 .modal_close{
     position: relative;
     top: -40px;
-    height:0;
-    right: 25px;
-    font-size: 28px;
+    height: 0;
+    right: -18px;
+    font-size: 34px;
     color: #C4C4C4;
     text-align: right;
+}
+
+.modal_close:hover{
+    color: #C4C4C4;
+    cursor: pointer;
 }
 
 .modal_prices{
@@ -746,6 +719,7 @@ background-color:rgb(26, 198, 156,0.8);
 .dd-option-image{
     border-radius: 50% !important;
     border:1px solid #D3D3D3;
+margin-right:20px !important;
 }
 
 .dd-selected-text{
@@ -760,6 +734,7 @@ background-color:rgb(26, 198, 156,0.8);
     width: 30px;
     border-radius: 50% !important;
     border:1px solid #D3D3D3;
+    margin-right:10px;
 }
 
 .dd-container{
@@ -767,9 +742,163 @@ background-color:rgb(26, 198, 156,0.8);
 }
 
 .dd-selected {
-    padding: 0px 19px;
+    padding: 0px 19px !important;
 }
 
 .dd-option-selected {
     background: #fff !important;
+}
+
+.dd-option-text{
+    color:#555;
+    font-size:18px;
+    font-weight: bold;
+    margin-bottom:2px;
+    margin-top:3px !important;
+}
+
+.dd-desc{
+    color:#555;
+    font-size: 15px !important;
+}
+
+.dd-option{
+    padding:20px 100px !important;
+
+}
+
+.modal_total_g{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    font-size:14px;
+    background:#FEC949;
+    color:#fff;
+    padding:3px 33px;
+    border-radius:30px;
+    margin-top:10px;
+}
+
+.total_g_price{
+    font-size:28px;
+    font-weight: bold;
+}
+
+.modal_agree{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:30px;
+    font-size:12px;
+}
+
+.modal_agree a{
+    color:#61D0D8;
+    text-decoration: none;
+}
+
+/* switch */
+.switch {
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    padding: 4px;
+    border-radius: 20px;
+    background: #D3D3D3;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: background 350ms ease;
+    margin-right:15px;
+  }
+  .switch:before, .switch:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transition: all 350ms cubic-bezier(0, 0.95, 0.38, 0.98), background 150ms ease;
+  }
+  .switch:before {
+    background: rgba(128, 128, 128, 0.075);
+    transform: translate3d(0, -50%, 0) scale(0);
+  }
+  .switch:after {
+    background: #fff;
+    transform: translate3d(0, -50%, 0);
+  }
+  .switch:active:before {
+    transform: translate3d(0, -50%, 0) scale(3);
+  }
+  
+  input:checked + .switch {
+    background-image: linear-gradient(to bottom, #61D0D8,#08AFBB);
+  }
+  input:checked + .switch:before {
+    background: rgba(131, 177, 84, 0.075);
+    transform: translate3d(100%, -50%, 0) scale(1);
+  }
+  input:checked + .switch:after {
+    transform: translate3d(100%, -50%, 0);
+  }
+  input:checked + .switch:active:before {
+    background: rgba(131, 177, 84, 0.075);
+    transform: translate3d(100%, -50%, 0) scale(3);
+  }
+
+  .modal_buy_btn{
+     text-align:center;
+     width:200px;
+     padding:8px;
+     text-decoration: none;
+      border-radius: 20px;
+      background-image:linear-gradient(to bottom, #61D0D8,#08AFBB);
+      color:#fff;
+  }
+
+  .modal_buy_btn:hover{
+      color:#fff;
+  }
+  
+  .modal-footer{
+      display:flex; 
+      justify-content: center;
+  }
+  
+  /* Reward page */
+  
+.news {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bcard__header img {
+    max-width: 100%;
+    max-height: 156px;
+    display: block;
+    object-fit: cover;
+}
+
+.news a{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    overflow: hidden;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ffffff;
+    text-decoration: none;
+}
+
+.bcard__body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #555555;
+    gap: 0.5rem;
+    font-size: 18px;
+    font-weight: bold;
 }

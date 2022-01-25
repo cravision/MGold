@@ -15,7 +15,8 @@
         rel="stylesheet">
     <!-- startinject -->
     <link rel="stylesheet" href="vendor/bootstrap-5.0.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>   
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- custom style css -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -38,24 +39,24 @@
     </script>
 
     <script type='text/javascript'>
-        $.get('partials/dashboard_main.html', function (response) {
-            $('#dashboard_main_include').html(response);
+        $.get('partials/reward_main.html', function (response) {
+            $('#rewards_main_include').html(response);
         });
     </script>
 
-<script type='text/javascript'>
-    $.get('partials/_footer.html', function (response) {
-        $('#footer_include').html(response);
-    });
-</script>
+    <script type='text/javascript'>
+        $.get('partials/_footer.html', function (response) {
+            $('#footer_include').html(response);
+        });
+    </script>
     <!-- include end -->
 </head>
+
 <body>
     <div id="header_include"></div>
     <div id="main">
         <div id="sidebar_include"></div>
-        <div id="dashboard_main_include">
-        </div>
+        <div id="rewards_main_include"></div>
     </div>
 
     <script src="js/custom.js"></script>
