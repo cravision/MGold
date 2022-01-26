@@ -134,16 +134,24 @@
             </div>
             <div class="pricechart_timeline">
                 <ul class="pricechart_tabs-list">
-                    <li class="active"><a href="#tab1">1d</a></li>
-                    <li><a href="#tab2">2w</a></li>
-                    <li><a href="#tab3">1m</a></li>
-                    <li><a href="#tab4">6m</a></li>
-                    <li><a href="#tab5">1y</a></li>
+                    <!-- <li class="active"><a href="#tab1">1d</a></li> -->
+                    <!-- <li><a href="#tab2" onclick="timeFrame(this)" value="day">2w</a></li> -->
+                    <li><button onclick="timeFrame(this)" value="oneweek">7d</button></li>
+                    <li class="active"><button onclick="timeFrame(this)" value="twoweek">2w</button></li>
+                    <li><button onclick="timeFrame(this)" value="onemonth">1m</button></li>
+                    <li><button onclick="timeFrame(this)" value="sixmonth">6m</button></li>
+                    <li><button onclick="timeFrame(this)" value="oneyear">1y</button></li>
+                    <!-- <li><a href="#tab3" onclick="timeFrame(this)" value="week">1m</a></li> -->
+                    <!-- <li><a href="#tab4" onclick="timeFrame(this)" value="month">6m</a></li> -->
+                    <!-- <li><a href="#tab5">1y</a></li> -->
                 </ul>
-                <button><img src="images/icons/inbox-in.svg" alt=""></button>
+                <button class="export"><img src="images/icons/inbox-in.svg" alt=""></button>
             </div>
         </div>
-
+        <div>
+            <canvas id="myChart"></canvas>
+          </div>
+           
         <div class="pricechart_tabs">
             <div id="tab1" class="pricechart_tab">
                 chart1
@@ -287,5 +295,147 @@ $(".btn-select").click(function(){
     });
 
 
-
+   
 </script>
+<script>
+    const oneweek = [
+        { x: Date.parse('2022-10-01'), y: 0},
+        { x: Date.parse('2022-10-02'), y: 236},
+        { x: Date.parse('2022-10-03'), y: 238},
+        { x: Date.parse('2022-10-04'), y: 240},
+        { x: Date.parse('2022-10-04'), y: 240},
+        { x: Date.parse('2022-10-05'), y: 245},
+        { x: Date.parse('2022-10-06'), y: 228},
+        { x: Date.parse('2022-10-07'), y: 236}
+    ];
+
+    const twoweek = [
+        { x: Date.parse('2022-10-09'), y: 236},
+        { x: Date.parse('2022-10-11'), y: 236},
+        { x: Date.parse('2022-10-13'), y: 238},
+        { x: Date.parse('2022-10-14'), y: 240},
+        { x: Date.parse('2022-10-15'), y: 242},
+        { x: Date.parse('2022-10-17'), y: 243},
+        { x: Date.parse('2022-10-21'), y: 237},
+        { x: Date.parse('2022-10-23'), y: 244},
+        { x: Date.parse('2022-10-25'), y: 242},
+        { x: Date.parse('2022-10-27'), y: 230},
+        { x: Date.parse('2022-11-01'), y: 242},
+        { x: Date.parse('2022-11-03'), y: 241}
+    ]
+
+    const onemonth = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 1000},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+
+    const sixmonth = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 1000},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+    const oneyear = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 1000},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+    const gradientBg = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientBg.addColorStop(0, 'transparent');
+    // gradientBg.addColorStop(0.5, 'green');
+    gradientBg.addColorStop(1, 'rgba(255, 99, 132, 1)');
+    const data = {
+    //   labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        // backgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor: gradientBg,
+        borderColor: 'rgb(255, 99, 132)',
+        data: twoweek,
+        tension: 0.4,
+        fill: true
+      }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+          locale: 'en-US',
+          scales:{
+              x: {
+                type: 'time',
+                time: {
+                    unit: 'day',
+                    displayFormats: {
+                        day: 'dd MMM'
+                    }
+                },
+                grid: {
+                    display: false,
+                }
+              },
+              y:{
+                grid: {
+                    display: false,
+                }
+              }
+          }
+      },
+    };
+  </script>
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    function timeFrame(period){
+        // console.log('hi')
+        console.log(period.value)
+        if(period.value == 'oneweek'){
+            myChart.config.options.scales.x.time.unit = 'day';
+            myChart.config.data.datasets[0].data = oneweek;
+        }
+        if(period.value == 'twoweek'){
+            myChart.config.options.scales.x.time.unit = 'day';
+            myChart.config.data.datasets[0].data = twoweek;
+        }
+        if(period.value == 'onemonth'){
+            myChart.config.options.scales.x.time.unit = 'week';
+            myChart.config.data.datasets[0].data = onemonth;
+        }
+        if(period.value == 'sixmonth'){
+            myChart.config.options.scales.x.time.unit = 'month';
+            myChart.config.data.datasets[0].data = sixmonth;
+        }
+        if(period.value == 'oneyear'){
+            myChart.config.options.scales.x.time.unit = 'year';
+            myChart.config.data.datasets[0].data = oneyear;
+        }
+        myChart.update();
+    }
+  </script>
+   

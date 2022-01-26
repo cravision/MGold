@@ -536,7 +536,7 @@ background-color:rgb(26, 198, 156,0.8);
     margin-bottom: 22px
 }
 
-.pricechart_timeline button {
+.pricechart_timeline .export {
     background-image: linear-gradient(to bottom, #4FE37E, #0DB14B);
     border: 0;
     border-radius: 15px;
@@ -566,7 +566,7 @@ background-color:rgb(26, 198, 156,0.8);
     float: left;
     margin: 0px;
     margin-right: 5px;
-    padding: 3px 10px;
+    padding: 3px 6px;
     text-align: center;
     border: 0;
     height: 27px;
@@ -583,10 +583,12 @@ background-color:rgb(26, 198, 156,0.8);
     cursor: pointer;
 }
 
-.pricechart_tabs-list li a {
+.pricechart_tabs-list li button {
     text-decoration: none;
     color: #999;
     font-weight: medium;
+    border:none;
+    background-color:#fff;
 }
 
 .pricechart_tab{
