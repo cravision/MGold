@@ -922,18 +922,18 @@ input:checked+.switch:active:before {
     font-size: 20px;
     color: #999999;
     margin-bottom: 15px;
-    padding:0px 10px
+    padding: 0px 10px
 }
 
 /* Reward_details */
-.reward_content{
+.reward_content {
     background: #fff;
     border-radius: 20px;
 }
 
 .reward_content img {
     max-width: 100vw;
-    width:100%;
+    width: 100%;
     max-height: 350px;
     display: block;
     object-fit: cover;
@@ -941,47 +941,132 @@ input:checked+.switch:active:before {
     border-top-right-radius: 20px;
 }
 
-.reward_content_button{
-    display:flex;
+.reward_content_button {
+    display: flex;
     max-width: 450px;
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
 
-.reward_content_button .btn_prev{
+.reward_content_button .btn_prev {
     background: #FFFFFF;
     border: 1px solid #D3D3D3;
     box-sizing: border-box;
     box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    padding:8px 20px;  
-    color:#08AFBB;
+    padding: 8px 20px;
+    color: #08AFBB;
     width: 200px;
-    margin:0 10px
+    margin: 0 10px
 }
 
-.reward_content_button .btn_next{
-background: linear-gradient(180deg, #61D0D8 0%, #08AFBB 100%);
-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
-padding:8px 20px;  
-border: 0px;
-color:#fff;
-width: 200px;
-margin:0 10px
+.reward_content_button .btn_next {
+    background: linear-gradient(180deg, #61D0D8 0%, #08AFBB 100%);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding: 8px 20px;
+    border: 0px;
+    color: #fff;
+    width: 200px;
+    margin: 0 10px
 }
-.reward_content_title{
-    padding:30px 30px 0px 30px;
+
+.reward_content_title {
+    padding: 30px 30px 0px 30px;
 
     text-align: center;
-    font-size:18px;
+    font-size: 18px;
     font-weight: bold;
 }
-.reward_content_date{
-    font-size:15px;
+
+.reward_content_date {
+    font-size: 15px;
     text-align: center;
 }
-.reward_content_details{
-    padding:30px;
-    font-size:15px;
+
+.reward_content_details {
+    padding: 30px;
+    font-size: 15px;
 }
+
+/* register */
+
+.register_main {
+    float: left;
+    width: 100%;
+    margin-top: 80px
+}
+
+#register_progressbar {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    display:flex;
+    width: 60%;
+    justify-content: space-between;
+}
+#register_progressbar li{
+    width:22%;
+    text-align: center;
+    list-style:none;
+}
+
+#register_progressbar .bar1,
+#register_progressbar .bar2,
+#register_progressbar .bar3,
+#register_progressbar .bar4{
+    height: 7px;
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.6s linear;
+    background:#D3D3D3;
+}
+
+#active1 .bar1{
+    background-color: #FEC949;
+}
+
+#active1 {
+    color: #555555;
+    font-weight: bold;
+}
+
+.register_main fieldset {
+    display: none;
+    width: 100px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 85px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 25px 1px gray
+}
+
+#first {
+    display: block;
+    width: 350px;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 25px 1px gray
+}
+
+.register_main textarea {
+    width: 100%;
+    margin: 10px 0;
+    height: 70px;
+    padding: 5px;
+    border: 3px solid #ecb0dc;
+    border-radius: 4px;
+}
+
+input[type=submit],
+input[type=button]{
+    width: 120px;
+    margin: 15px 25px;
+    padding: 5px;
+    height: 40px;
+    background-color: #a0522d;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Droid Serif', serif
 }
