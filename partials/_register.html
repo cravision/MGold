@@ -2,18 +2,52 @@
     <form action="#" class="regform" method="get">
         <!-- Progressbar -->
         <ul id="register_progressbar">
-            <li id="active1"><div class="bar1"></div>Personal Info</li>
-            <li id="active2"><div class="bar2"></div>Bank Acc Info</li>
-            <li id="active3"><div class="bar3"></div>Security</li>
-            <li id="active4"><div class="bar4"></div>Complete</li>
+            <li id="active1"><div id="bar1"></div>Personal Info</li>
+            <li id="active2"><div id="bar2"></div>Bank Acc Info</li>
+            <li id="active3"><div id="bar3"></div>Security</li>
+            <li id="active4"><div id="bar4"></div>Complete</li>
         </ul>
         <!-- Fieldsets -->
         <fieldset id="first">
-            <h2 class="resgiter_title">Create your account</h2>
-            <p class="subresgiter_title">Step 1</p><input class="text_field" name="email" placeholder="Email" type="text"
-                value="">
-            <input class="text_field" name="pass" placeholder="Password" type="password" value="">
-            <input class="text_field" name="cpass" placeholder="Confirm Password" type="password" value="">
+            <div class="register_title">
+                Create Go Gold Account
+            </div>
+            <div class="text_field">
+                <label for="fullname">FULL NAME (AS PER NRIC)</label>
+                <input name="fullname" type="text" value="">
+            </div>
+            <div class="text_field">
+                <label for="email">Email</label>
+                <input name="email" type="text" value="">
+            </div>
+            <div class="text_field">
+                <label for="NRIC">NRIC</label>
+                <input name="NRIC" type="number" value="">
+            </div>
+            <div class="text_field">
+                <label for="mobile">MOBILE</label>
+                <input name="mobile" type="number" value="">
+            </div>
+            <div class="text_field">
+                <label for="address">Address</label>
+                <input name="address" type="text" value="">
+            </div>
+            <div class="text_field30">
+                <label for="city">CITY</label>
+                <input name="city" type="text" value="">
+            </div>
+            <div class="text_field30">
+                <label for="postcode">POSTCODE</label>
+                <input name="postcode" type="text" value="">
+            </div>
+            <div class="text_field30">
+               <select name="" id="">
+                   <option value=""></option>
+               </select>
+            </div>
+   
+          
+           
             <input id="next_btn1" onclick="next_step1()" type="button" value="Next">
         </fieldset>
         <fieldset id="second">
@@ -26,18 +60,18 @@
                 <option>HSC</option>
                 <option>SSC</option>
             </select>
-            <input class="text_field" name="marks" placeholder="Marks Obtained" type="text" value="">
-            <input class="text_field" name="pyear" placeholder="Passing Year" type="text" value="">
-            <input class="text_field" name="univ" placeholder="University" type="text">
+            <input name="marks" placeholder="Marks Obtained" type="text" value="">
+            <input name="pyear" placeholder="Passing Year" type="text" value="">
+            <input name="univ" placeholder="University" type="text">
             <input id="pre_btn1" onclick="prev_step1()" type="button" value="Previous">
             <input id="next_btn2" name="next" onclick="next_step2()" type="button" value="Next">
         </fieldset>
         <fieldset id="third">
             <h2 class="resgiter_title">Create Go Gold Account</h2>
             <p class="subresgiter_title">Step 3</p>
-            <input class="text_field" name="fname" placeholder="First Name" type="text">
-            <input class="text_field" name="lname" placeholder="Last Name" type="text">
-            <input class="text_field" name="cont" placeholder="Contact" type="text">
+            <input name="fname" placeholder="First Name" type="text">
+            <input name="lname" placeholder="Last Name" type="text">
+            <input name="cont" placeholder="Contact" type="text">
             <label>Gender</label>
             <input name="gender" type="radio" value="Male">Male
             <input name="gender" type="radio" value="Female">Female
@@ -48,9 +82,9 @@
         <fieldset id="forth">
             <h2 class="resgiter_title">Create Go Gold Account</h2>
             <p class="subresgiter_title">Step 4</p>
-            <input class="text_field" name="fname" placeholder="First Name" type="text">
-            <input class="text_field" name="lname" placeholder="Last Name" type="text">
-            <input class="text_field" name="cont" placeholder="Contact" type="text">
+            <input name="fname" placeholder="First Name" type="text">
+            <input name="lname" placeholder="Last Name" type="text">
+            <input name="cont" placeholder="Contact" type="text">
             <label>Gender</label>
             <input name="gender" type="radio" value="Male">Male
             <input name="gender" type="radio" value="Female">Female
@@ -96,41 +130,54 @@
     function next_step1() {
         document.getElementById("first").style.display = "none";
         document.getElementById("second").style.display = "block";
-        document.getElementById("active2").style.color = "red";
-        document.getElementsByClassName(".bar2").style.color = "red";
+        document.getElementById("active2").style.color = "#555555";
+        document.getElementById("active2").style.fontWeight = "bold";
+        document.getElementById("bar2").style.background = "#FEC949";
     }
     // Function that executes on click of first previous button.
     function prev_step1() {
         document.getElementById("first").style.display = "block";
         document.getElementById("second").style.display = "none";
-        document.getElementById("active1").style.color = "red";
-        document.getElementById("active2").style.color = "gray";
+        document.getElementById("active1").style.color = "#555555";
+        document.getElementById("active1").style.fontWeight = "bold";
+        document.getElementById("active2").style.color = "#999999";
+        document.getElementById("bar2").style.background = "#D3D3D3";
     }
     // Function that executes on click of second next button.
     function next_step2() {
         document.getElementById("second").style.display = "none";
         document.getElementById("third").style.display = "block";
-        document.getElementById("active3").style.color = "red";
+        document.getElementById("active3").style.color = "#555555";
+        document.getElementById("active3").style.fontWeight = "bold";
+        document.getElementById("bar3").style.background = "#FEC949";
     }
     // Function that executes on click of second previous button.
     function prev_step2() {
         document.getElementById("third").style.display = "none";
         document.getElementById("second").style.display = "block";
-        document.getElementById("active2").style.color = "red";
-        document.getElementById("active3").style.color = "gray";
+        document.getElementById("active2").style.color = "#555555";
+        document.getElementById("active2").style.fontWeight = "bold";
+        document.getElementById("active3").style.color = "#999999";
+        document.getElementById("bar2").style.background = "#FEC949";
+        document.getElementById("bar3").style.background = "#D3D3D3";
     }
 
     // Function that executes on click of second next button.
         function next_step3() {
         document.getElementById("third").style.display = "none";
         document.getElementById("forth").style.display = "block";
-        document.getElementById("active3").style.color = "red";
+        document.getElementById("active4").style.color = "#555555";
+        document.getElementById("active4").style.fontWeight = "bold";
+        document.getElementById("bar4").style.background = "#FEC949";
     }
     // Function that executes on click of second previous button.
     function prev_step3() {
         document.getElementById("forth").style.display = "none";
         document.getElementById("third").style.display = "block";
-        document.getElementById("active2").style.color = "red";
-        document.getElementById("active3").style.color = "gray";
+        document.getElementById("active3").style.color = "#555555";
+        document.getElementById("active3").style.fontWeight = "bold";
+        document.getElementById("active4").style.color = "#999999";
+        document.getElementById("bar3").style.background = "#FEC949";
+        document.getElementById("bar4").style.background = "#D3D3D3";
     }
 </script>

@@ -683,7 +683,7 @@ footer span {
 
 
 /* Payment Method - Modal  */
-.dd-select {
+#modal_payment_method .dd-select {
     border-radius: 30px !important;
     border: solid 1px #ccc !important;
     position: relative !important;
@@ -694,11 +694,11 @@ footer span {
     z-index: 2001 !important;
 }
 
-.dd-selected-description {
+#modal_payment_method .dd-selected-description {
     display: none !important;
 }
 
-.dd-options {
+#modal_payment_method .dd-options {
     width: 100% !important;
     padding-top: 22px !important;
     margin-top: -22px !important;
@@ -709,11 +709,11 @@ footer span {
 }
 
 
-.dd-option:hover {
+#modal_payment_method .dd-option:hover {
     background: #fff !important;
 }
 
-.dd-pointer {
+#modal_payment_method .dd-pointer {
     width: 0;
     height: 0;
     position: absolute;
@@ -722,13 +722,13 @@ footer span {
 
 }
 
-.dd-option-image {
+#modal_payment_method .dd-option-image {
     border-radius: 50% !important;
     border: 1px solid #D3D3D3;
     margin-right: 20px !important;
 }
 
-.dd-selected-text {
+#modal_payment_method .dd-selected-text {
     color: #555;
     font-weight: 500;
     font-size: 14px;
@@ -736,7 +736,7 @@ footer span {
     padding-left: 5px;
 }
 
-.dd-selected-image {
+#modal_payment_method .dd-selected-image {
     width: 30px;
     border-radius: 50% !important;
     border: 1px solid #D3D3D3;
@@ -747,11 +747,11 @@ footer span {
     width: 100% !important;
 }
 
-.dd-selected {
+#modal_payment_method .dd-selected {
     padding: 0px 19px !important;
 }
 
-.dd-option-selected {
+#modal_payment_method .dd-option-selected {
     background: #fff !important;
 }
 
@@ -991,37 +991,48 @@ input:checked+.switch:active:before {
 /* register */
 
 .register_main {
-    float: left;
-    width: 100%;
-    margin-top: 80px
+   margin-top:5px;
+   width:100%;
+   display: flex;
+   justify-content: center
+}
+
+.register_main form{
+    width:100%;
+    background: #ffffff;
+    padding:20px;
+    border-radius: 20px;
+    text-align: center;
 }
 
 #register_progressbar {
-    margin: 0;
+    margin: auto 0;
     padding: 0;
     font-size: 10px;
     display:flex;
-    width: 60%;
+    width: 40%;
     justify-content: space-between;
+    position:relative;
+    left:31%;
 }
 #register_progressbar li{
-    width:22%;
+    width:24%;
     text-align: center;
     list-style:none;
 }
 
-#register_progressbar .bar1,
-#register_progressbar .bar2,
-#register_progressbar .bar3,
-#register_progressbar .bar4{
-    height: 7px;
+#register_progressbar #bar1,
+#register_progressbar #bar2,
+#register_progressbar #bar3,
+#register_progressbar #bar4{
+    height: 9px;
     width: 100%;
     border-radius: 10px;
-    transition: 0.6s linear;
+    transition: 0.3s linear;
     background:#D3D3D3;
 }
 
-#active1 .bar1{
+#active1 #bar1{
     background-color: #FEC949;
 }
 
@@ -1032,30 +1043,49 @@ input:checked+.switch:active:before {
 
 .register_main fieldset {
     display: none;
-    width: 100px;
-    padding: 20px;
-    margin-top: 50px;
-    margin-left: 85px;
+    width: 100%;
+    padding: 30px 70px;
+    margin:20px;
     border-radius: 5px;
-    box-shadow: 3px 3px 25px 1px gray
+}
+
+.text_field{
+    width:100%;
+  
+}
+
+.text_field30{
+    width:30%;
+}
+
+.text_field input{
+    width:100%;
+    border: 1px solid #D3D3D3;
+    padding:5px 20px;  
+    padding-top:15px;
+    border-radius: 30px;
+    font-size:13px;
+    color:#555;
+    margin-top:10px
+}
+.text_field label{
+    position: absolute;
+    font-size:10px;
+    margin-top:14px;
+    margin-left:20px;
+    color:#555
 }
 
 #first {
     display: block;
-    width: 350px;
-    padding: 20px;
-    margin-top: 50px;
+    width: 100%;
+    padding: 30px;
+    margin:20px;
     border-radius: 5px;
-    box-shadow: 3px 3px 25px 1px gray
 }
 
-.register_main textarea {
-    width: 100%;
-    margin: 10px 0;
-    height: 70px;
-    padding: 5px;
-    border: 3px solid #ecb0dc;
-    border-radius: 4px;
+.register_title{
+    font-size:20px;
 }
 
 input[type=submit],
