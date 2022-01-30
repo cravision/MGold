@@ -319,10 +319,12 @@ $(".btn-select").click(function(){
         { x: Date.parse('2022-10-21'), y: 237},
         { x: Date.parse('2022-10-23'), y: 244},
         { x: Date.parse('2022-10-25'), y: 242},
-        { x: Date.parse('2022-10-27'), y: 230},
+        { x: Date.parse('2022-10-27'), y: 236},
         { x: Date.parse('2022-11-01'), y: 242},
         { x: Date.parse('2022-11-03'), y: 241}
     ]
+   res = Math.max.apply(Math, twoweek.map(function(o) { return o.y; }))
+   res1 = Math.min.apply(Math, twoweek.map(function(o) { return o.y; }))
 
     const onemonth = [
         { x: Date.parse('2021-06-01'), y: 500},
@@ -363,47 +365,140 @@ $(".btn-select").click(function(){
     
     var ctx = document.getElementById('myChart').getContext('2d');
     const gradientBg = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientBg.addColorStop(0, 'transparent');
-    // gradientBg.addColorStop(0.5, 'green');
-    gradientBg.addColorStop(1, 'rgba(255, 99, 132, 1)');
+    gradientBg.addColorStop(0, '#FED777');
+    gradientBg.addColorStop(1, 'rgba(255, 250, 244, 0)');
     const data = {
     //   labels: labels,
       datasets: [{
         label: 'My First dataset',
         // backgroundColor: 'rgb(255, 99, 132)',
         backgroundColor: gradientBg,
-        borderColor: 'rgb(255, 99, 132)',
+        borderColor: '#FED777',
         data: twoweek,
-        tension: 0.4,
-        fill: true
+        tension: 0.3,
+        fill: true,
+        pointHoverBorderColor: '#4FE37E',
+        pointHoverBackgroundColor: '#4FE37E',
+        // pointBorderWidth:3,
+        pointHoverBorderWidth: 3,
+        pointRadius: 3,
+        pointHoverRadius: 3
       }]
     };
-  
+   
+    //tooltipLine Block
+    const tooltipLine = {
+        id: 'tooltipLine',
+        afterDraw: chart => {
+            if(chart.tooltip._active && chart.tooltip._active.length){
+                const ctx = chart.ctx;
+                ctx.save();
+                const activePoint = chart.tooltip._active[0];
+                // console.log(chart.chartArea);
+
+                // ctx.beginPath();
+                // ctx.setLineDash([5, 7]);
+                // ctx.moveTo(activePoint.element.x, chart.chartArea.top);
+                // ctx.lineTo(activePoint.element.x, activePoint.element.y);
+                // ctx.lineWidth = 2;
+                // ctx.strokeStyle = 'red';
+                // ctx.stroke();
+                // ctx.restore();
+
+                ctx.beginPath();
+                ctx.setLineDash([5, 7]);
+                ctx.moveTo(activePoint.element.x, activePoint.element.y);
+                ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#57C4CC';
+                ctx.stroke();
+                ctx.restore();
+            }
+            // console.log(chart)
+        }
+    }
     const config = {
-      type: 'line',
-      data: data,
-      options: {
-          locale: 'en-US',
-          scales:{
-              x: {
-                type: 'time',
-                time: {
-                    unit: 'day',
-                    displayFormats: {
-                        day: 'dd MMM'
+        type: 'line',
+        data: data,
+        options: {
+            locale: 'en-US',
+            scales:{
+                x: {
+                    offset: true,
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: {
+                            day: 'dd MMM'
+                        }
+                    },
+                    grid: {
+                        // display: false,
+                        display: true,
+                        drawOnChartArea: false,
+                        tickColor: '#999',
+                        position: 'right'
+                    },
+                    ticks: {
+                        color: "#9A9A9A",
+                    },
+                },
+
+                y: {
+                    offset: true,
+                    grace: '5%',
+                    // beginAtZero: true,
+                    // maxTicksLimit: 5,
+                    // min: 236,
+                    grid: {
+                        display: false,
+                        drawBorder: false,
+                    },
+                    ticks: {
+                        callback: function(label, index, labels) {
+                            return label + ".00";
+                        },
+                        color: "#9A9A9A",
+                    },
+                }   
+
+            },
+            plugins: {
+                autocolors: false,
+                annotation: {
+                    annotations: {
+                        line1: {
+                            type: 'line',
+                            yMin: res1,
+                            yMax: res1,
+                            borderColor: '#999',
+                            borderWidth: 2,
+                            borderDash: [2,2],
+                        },
+                        line2: {
+                            type: 'line',
+                            yMin: res,
+                            yMax: res,
+                            borderColor: '#999',
+                            borderWidth: 2,
+                            borderDash: [2,2],
+
+                        }
                     }
                 },
-                grid: {
-                    display: false,
+                legend: {
+                    display:false
+                },
+                tooltip: {
+                    yAlign: 'bottom',
+                    displayColors: false,
+                    backgroundColor: '#4FE37E',
+                    cornerRadius: 20,
+                    yAlign: 'bottom'
                 }
-              },
-              y:{
-                grid: {
-                    display: false,
-                }
-              }
-          }
-      },
+            },
+        },
+        plugins: [tooltipLine]
     };
   </script>
   <script>
@@ -418,23 +513,41 @@ $(".btn-select").click(function(){
         if(period.value == 'oneweek'){
             myChart.config.options.scales.x.time.unit = 'day';
             myChart.config.data.datasets[0].data = oneweek;
+            
+            maxValue = Math.max.apply(Math, oneweek.map(function(o) { return o.y; }))
+            minValue = Math.min.apply(Math, oneweek.map(function(o) { return o.y; }))
+            
         }
         if(period.value == 'twoweek'){
             myChart.config.options.scales.x.time.unit = 'day';
             myChart.config.data.datasets[0].data = twoweek;
+            maxValue = Math.max.apply(Math, twoweek.map(function(o) { return o.y; }))
+            minValue = Math.min.apply(Math, twoweek.map(function(o) { return o.y; }))
         }
         if(period.value == 'onemonth'){
             myChart.config.options.scales.x.time.unit = 'week';
             myChart.config.data.datasets[0].data = onemonth;
+            maxValue = Math.max.apply(Math, onemonth.map(function(o) { return o.y; }))
+            minValue = Math.min.apply(Math, onemonth.map(function(o) { return o.y; }))
         }
         if(period.value == 'sixmonth'){
             myChart.config.options.scales.x.time.unit = 'month';
             myChart.config.data.datasets[0].data = sixmonth;
+            maxValue = Math.max.apply(Math, sixmonth.map(function(o) { return o.y; }))
+            minValue = Math.min.apply(Math, sixmonth.map(function(o) { return o.y; }))
         }
         if(period.value == 'oneyear'){
             myChart.config.options.scales.x.time.unit = 'year';
             myChart.config.data.datasets[0].data = oneyear;
+            maxValue = Math.max.apply(Math, oneyear.map(function(o) { return o.y; }))
+            minValue = Math.min.apply(Math, oneyear.map(function(o) { return o.y; }))
         }
+        console.log(minValue)
+        console.log(maxValue)
+        myChart.config.options.plugins.annotation.annotations.line1.yMin = minValue;
+        myChart.config.options.plugins.annotation.annotations.line1.yMax = minValue;
+        myChart.config.options.plugins.annotation.annotations.line2.yMin = maxValue;
+        myChart.config.options.plugins.annotation.annotations.line2.yMax = maxValue;
         myChart.update();
     }
   </script>
