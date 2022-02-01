@@ -2,10 +2,18 @@
     <form action="#" class="regform" method="get">
         <!-- Progressbar -->
         <ul id="register_progressbar">
-            <li id="active1"><div id="bar1"></div>Personal Info</li>
-            <li id="active2"><div id="bar2"></div>Bank Acc Info</li>
-            <li id="active3"><div id="bar3"></div>Security</li>
-            <li id="active4"><div id="bar4"></div>Complete</li>
+            <li id="active1">
+                <div id="bar1"></div>Personal Info
+            </li>
+            <li id="active2">
+                <div id="bar2"></div>Bank Acc Info
+            </li>
+            <li id="active3">
+                <div id="bar3"></div>Security
+            </li>
+            <li id="active4">
+                <div id="bar4"></div>Complete
+            </li>
         </ul>
         <!-- Fieldsets -->
         <fieldset id="first">
@@ -13,84 +21,129 @@
                 Create Go Gold Account
             </div>
             <div class="text_field">
-                <label for="fullname">FULL NAME (AS PER NRIC)</label>
+                <label class="form_titlelabel" for="fullname">FULL NAME (AS PER NRIC)</label>
                 <input name="fullname" type="text" value="">
             </div>
             <div class="text_field">
-                <label for="email">Email</label>
+                <label class="form_titlelabel" for="email">Email</label>
                 <input name="email" type="text" value="">
             </div>
             <div class="text_field">
-                <label for="NRIC">NRIC</label>
+                <label class="form_titlelabel" for="NRIC">NRIC</label>
                 <input name="NRIC" type="number" value="">
             </div>
             <div class="text_field">
-                <label for="mobile">MOBILE</label>
+                <label class="form_titlelabel" for="mobile">MOBILE</label>
                 <input name="mobile" type="number" value="">
             </div>
             <div class="text_field">
-                <label for="address">Address</label>
+                <label class="form_titlelabel" for="address">Address</label>
                 <input name="address" type="text" value="">
             </div>
-            <div class="text_field30">
-                <label for="city">CITY</label>
-                <input name="city" type="text" value="">
+            <div class="d-flex justify-content-between">
+                <div class="text_field30">
+                    <label class="form_titlelabel" for="city">CITY</label>
+                    <input name="city" type="text" value="">
+                </div>
+                <div class="text_field30">
+                    <label class="form_titlelabel" for="postcode">POSTCODE</label>
+                    <input name="postcode" type="text" value="">
+                </div>
+                <div class="text_field30">
+                    <label class="selecttion_label" for="state">STATE</label>
+                    <div>
+                        <select name="" id="register_selection">
+                            <option value="1">State 1</option>
+                            <option value="2">State 2</option>
+                            <option value="3">State 3</option>
+                            <option value="4">State 4</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="text_field30">
-                <label for="postcode">POSTCODE</label>
-                <input name="postcode" type="text" value="">
+            <div class="register_agree">
+                <div>
+                    <input id="switch" type="checkbox" hidden />
+                    <label for="switch" class="switch"></label>
+                </div>
+                <div>
+                    I agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.
+                </div>
             </div>
-            <div class="text_field30">
-               <select name="" id="">
-                   <option value=""></option>
-               </select>
-            </div>
-   
-          
-           
             <input id="next_btn1" onclick="next_step1()" type="button" value="Next">
+            <div class="register_login">
+                Already have an account? <a href="#">Login here</a>
+            </div>
         </fieldset>
         <fieldset id="second">
-            <h2 class="resgiter_title">Create Go Gold Account</h2>
-            <p class="subresgiter_title">Step 2</p>
-            <select class="options">
-                <option>--Select Education--</option>
-                <option>Post Graduate</option>
-                <option>Graduate</option>
-                <option>HSC</option>
-                <option>SSC</option>
-            </select>
-            <input name="marks" placeholder="Marks Obtained" type="text" value="">
-            <input name="pyear" placeholder="Passing Year" type="text" value="">
-            <input name="univ" placeholder="University" type="text">
-            <input id="pre_btn1" onclick="prev_step1()" type="button" value="Previous">
+            <div class="register_title">
+                Create Go Gold Account
+            </div>
+            <div class="text_field">
+                <label class="selecttion_label" for="bankname">BANK NAME</label>
+                <div>
+                    <select name="" id="register_selection2">
+                        <option value="1">Bank 1</option>
+                        <option value="2">Bank 2</option>
+                        <option value="3">Bank 3</option>
+                        <option value="4">Bank 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="bankno">BANK ACCOUNT NUMBER</label>
+                <input name="bankno" type="number" value="">
+            </div>
+            <div class="text_field">
+                <label class="selecttion_label" for="categories">OCCUPATION CATEGORY</label>
+                <div>
+                    <select name="" id="register_selection3">
+                        <option value="1">category 1</option>
+                        <option value="2">category 2</option>
+                        <option value="3">category 3</option>
+                        <option value="4">category 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="code">CAMPAIGN CODE (OPTIONAL)</label>
+                <input name="code" type="number" value="">
+            </div>
+           
+            <input id="pre_btn1" onclick="prev_step1()" type="button" value="Back">
             <input id="next_btn2" name="next" onclick="next_step2()" type="button" value="Next">
         </fieldset>
         <fieldset id="third">
-            <h2 class="resgiter_title">Create Go Gold Account</h2>
-            <p class="subresgiter_title">Step 3</p>
-            <input name="fname" placeholder="First Name" type="text">
-            <input name="lname" placeholder="Last Name" type="text">
-            <input name="cont" placeholder="Contact" type="text">
-            <label>Gender</label>
-            <input name="gender" type="radio" value="Male">Male
-            <input name="gender" type="radio" value="Female">Female
-            <textarea name="address" placeholder="Address"></textarea>
-            <input id="pre_btn1" onclick="prev_step2()" type="button" value="Previous">
+            <div class="register_title">
+                Create Go Gold Account
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="pass">ENTER PASSWORD</label>
+                <input name="pass" type="password" value="">
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="pass">CONFIRM PASSWORD</label>
+                <input name="pass" type="password" value="">
+            </div>
+            <input id="pre_btn1" onclick="prev_step2()" type="button" value="Back">
             <input id="next_btn2" name="next" onclick="next_step3()" type="button" value="Next">
         </fieldset>
         <fieldset id="forth">
-            <h2 class="resgiter_title">Create Go Gold Account</h2>
-            <p class="subresgiter_title">Step 4</p>
-            <input name="fname" placeholder="First Name" type="text">
-            <input name="lname" placeholder="Last Name" type="text">
-            <input name="cont" placeholder="Contact" type="text">
-            <label>Gender</label>
-            <input name="gender" type="radio" value="Male">Male
-            <input name="gender" type="radio" value="Female">Female
-            <textarea name="address" placeholder="Address"></textarea>
-            <input id="pre_btn2" onclick="prev_step3()" type="button" value="Previous">
-            <input class="submit_btn" onclick="validation(event)" type="submit" value="Submit">
+            <div class="register_title">
+                Login
+            </div>
+            <div class="registed_alert">
+                You have been registered successfully. Please login to continue.
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="email">EMAIL</label>
+                <input name="email" type="text" value="">
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="pass">PASSWORD</label>
+                <input name="pass" type="password" value="">
+            </div>
+            <input class="submit_btn" onclick="validation(event)" type="submit" value="Next">
         </fieldset>
     </form>
 </div>
@@ -163,7 +216,7 @@
     }
 
     // Function that executes on click of second next button.
-        function next_step3() {
+    function next_step3() {
         document.getElementById("third").style.display = "none";
         document.getElementById("forth").style.display = "block";
         document.getElementById("active4").style.color = "#555555";
@@ -180,4 +233,10 @@
         document.getElementById("bar3").style.background = "#FEC949";
         document.getElementById("bar4").style.background = "#D3D3D3";
     }
+</script>
+
+<!-- select option - register -->
+
+<script>
+    $("#register_selection, #register_selection2,#register_selection3").ddslick();
 </script>

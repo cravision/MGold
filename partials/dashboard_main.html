@@ -1,6 +1,6 @@
 <div class="container">
-
-
+    <button data-bs-toggle="modal" data-bs-target="#confirm_process">confirm process</button>
+    <button data-bs-toggle="modal" data-bs-target="#e-aqad">E-AQAD</button>
     <div class="data_row2">
         <div class="d-flex justify-content-between">
             <div class="dashboard_title">
@@ -156,7 +156,7 @@
 
 <!-- buy-modal -->
 <div class="modal fade" id="buy" tabindex="-1" aria-labelledby="buy" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal_title">
                 Buy Gold
@@ -225,6 +225,170 @@
 </div>
 
 
+<!-- confirm_process -modal -->
+<div class="modal fade" id="confirm_process" tabindex="-1" aria-labelledby="confirm_process" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal_title">
+                Confirm Payment
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                Amount to be paid <strong>RM 201.20</strong><br>
+                Including FPX services charge <strong>RM1.20</strong>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal_back_btn">Buy Now</a>
+                <a href="#" class="modal_process_btn">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- e-AQAD -modal -->
+<div class="modal fade" id="e-aqad" tabindex="-1" aria-labelledby="e-aqad" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal_title">
+                e-AQAD Customer Buy
+            </div>
+            <div class="modal-body">
+                <div class="aqad_info">
+                    <div>Date</div>
+                    <span>Thu, 23 Dec 2021, 12:46:16</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Name</div>
+                    <span>John Doe</span>
+                </div>
+                <div class="aqad_info">
+                    <div>NRIC</div>
+                    <span>891010-10-8989</span>
+                </div>
+                <div class="aqad_info">
+                    <div>GoGold Acc. No</div>
+                    <span>EG72EC7BE1</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Gold Purchase</div>
+                    <span>0.806 gram</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Purchase Price</div>
+                    <span>RM200 / gram</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Fees</div>
+                    <span>RM1.20</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Total Buy</div>
+                    <span>RM201.20</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Purity</div>
+                    <span>999.9 (LBMA Standard)</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Vault</div>
+                    <span>SG4S, Malaysia (Appointed Security Provider)</span>
+                </div>
+
+                <div class="aqad_title">
+                    Final Total
+                </div>
+                <div class="aqad_total">
+                    RM201.20
+                </div>
+                <div class="aqad_notice">
+                    Please complete payment within the next 3 minutes
+                </div>
+
+                <div class="aqad_countdown">
+                   <span>The rates offered will expire in</span>
+                <span class="countdown"></span>
+                </div>
+
+                <div class="aqad_title">
+                    Campaign Code
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="pass">(Optional)</label>
+                    <input name="code" type="text" value="">
+                </div>
+                <span class="aqad_input_alert">Please ensure NRIC is accurate to be eligible for the campaign.</span>
+                <div class="aqad_title">
+                    Security Pin
+                </div>
+                <div class="d-flex justify-content-center">
+                    <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                        <input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
+                        <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+                        <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+                        <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+                        <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+                        <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal_process_btn">Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- pin input field -->
+<script>
+    $('.digit-group').find('input').each(function() {
+	$(this).attr('maxlength', 1);
+	$(this).on('keyup', function(e) {
+		var parent = $($(this).parent());
+		
+		if(e.keyCode === 8 || e.keyCode === 37) {
+			var prev = parent.find('input#' + $(this).data('previous'));
+			
+			if(prev.length) {
+				$(prev).select();
+			}
+		} else if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+			var next = parent.find('input#' + $(this).data('next'));
+			
+			if(next.length) {
+				$(next).select();
+			} else {
+				if(parent.data('autosubmit')) {
+					parent.submit();
+				}
+			}
+		}
+	});
+});
+</script>
+
+<!-- 3mins countdown -->
+<script>
+    var timer2 = "3:00";
+var interval = setInterval(function() {
+
+
+  var timer = timer2.split(':');
+  //by parsing integer, I avoid all extra string processing
+  var minutes = parseInt(timer[0], 10);
+  var seconds = parseInt(timer[1], 10);
+  --seconds;
+  minutes = (seconds < 0) ? --minutes : minutes;
+  if (minutes < 0) clearInterval(interval);
+  seconds = (seconds < 0) ? 59 : seconds;
+  seconds = (seconds < 10) ? '0' + seconds : seconds;
+  //minutes = (minutes < 10) ?  minutes : minutes;
+  $('.countdown').html(minutes + ':' + seconds);
+  timer2 = minutes + ':' + seconds;
+}, 1000);
+</script>
 <!-- pricechart - tab -->
 <script type="text/javascript">
     $(document).ready(function () {
