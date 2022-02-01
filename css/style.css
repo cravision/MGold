@@ -313,6 +313,70 @@ footer span {
     margin-top: 60px;
 }
 
+.data_row {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.register_promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register_promo_banner {
+    margin: -10px
+}
+
+.register_promo_main {
+    font-size: 22px;
+    color: #0DB14B;
+    font-weight: bold;
+    width: 70%;
+}
+
+.register_promo_main span {
+    color: #555;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.register_promo_button {
+    margin-top: 25px;
+}
+
+.register_promo_button a {
+    background: linear-gradient(to bottom, #4FE37E, #0DB14B);
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.dashboard_overview {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.overview_status {
+    width: 20%;
+    text-align: center;
+}
+
+.status_title {
+    font-size: 11px;
+    font-weight: 500;
+    color: #999;
+
+}
+
 .buysell_bx {
     background-color: #fff;
     padding: 20px;
@@ -323,7 +387,7 @@ footer span {
 .dashboard_title {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 22px;
+    margin-bottom: 10px;
     color: #555555
 }
 
@@ -427,6 +491,7 @@ footer span {
     background-image: linear-gradient(to bottom, #FEC949, #FF9900);
 }
 
+.data_row2,
 .data_row3,
 .data_row4,
 .data_row5 {
@@ -456,9 +521,6 @@ footer span {
     background-color: #fff !important;
     filter: grayscale(100%);
 }
-
-
-
 
 .data_row3 .shortclick img {
     width: 19px;
@@ -1222,7 +1284,7 @@ label.selecttion_label {
     color: #fff
 }
 
-.modal_back_btn:hover{
+.modal_back_btn:hover {
     color: #61D0D8;
 }
 
@@ -1231,62 +1293,62 @@ label.selecttion_label {
     text-align: center;
 }
 
-.aqad_info{
-    display:flex;
+.aqad_info {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom:1px solid #D3D3D3;
-    color:#555;
-    font-size:14px;
-    padding:10px 0px;
+    border-bottom: 1px solid #D3D3D3;
+    color: #555;
+    font-size: 14px;
+    padding: 10px 0px;
 }
 
-.aqad_info span{
+.aqad_info span {
     font-weight: bold;
 }
 
-.aqad_title{
+.aqad_title {
     font-weight: bold;
     text-align: center;
-    font-size:14px;
-    color:#555;
+    font-size: 14px;
+    color: #555;
     margin-top: 25px;
 }
 
-.aqad_total{
-    font-size:35px;
+.aqad_total {
+    font-size: 35px;
     text-align: center;
     color: #61D0D8;
     font-weight: bold;
 }
 
-.aqad_notice{
-    font-size:14px;
+.aqad_notice {
+    font-size: 14px;
     font-weight: 500;
     text-align: center;
 }
 
-.aqad_countdown{
-    display:flex;
+.aqad_countdown {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    color:#fff;
-    background-color:#FEC949;
-    margin:10px 20px;
-    padding:5px 20px;
+    color: #fff;
+    background-color: #FEC949;
+    margin: 10px 20px;
+    padding: 5px 20px;
     border-radius: 30px;
-    font-size:13px
+    font-size: 13px
 }
 
-.countdown{
-    font-size:23px;
+.countdown {
+    font-size: 23px;
     font-weight: bold;
 }
 
-.aqad_input_alert{
-    font-size:11px;
+.aqad_input_alert {
+    font-size: 11px;
     color: #61D0D8;
-    padding-left:15px
+    padding-left: 15px
 }
 
 
@@ -1295,23 +1357,22 @@ label.selecttion_label {
     height: 50px;
     border: 1px solid #D3D3D3;
     line-height: 50px;
-border-radius: 20px;
+    border-radius: 20px;
     text-align: center;
     font-size: 18px;
     font-weight: 200;
-    color:#555;
+    color: #555;
     margin: 10px 2px;
-  }
-  .digit-group .splitter {
+}
+
+.digit-group .splitter {
     padding: 0 5px;
     color: #555;
     font-size: 24px;
-  }
-  
-  .prompt {
+}
+
+.prompt {
     margin-bottom: 20px;
     font-size: 20px;
     color: #555;
-  }
-
-
+}
