@@ -135,6 +135,8 @@
                                 datasets: [{
                                     backgroundColor: gradient,
                                     pointBackgroundColor:false,
+                                    fill: true,
+                                    tension: 0.4,
                                     borderWidth: 10,
                                     borderColor: '#1AC69C',
                                     data: [20, 40,80, 50,90]
@@ -150,18 +152,18 @@
                                     duration: 520
                                 },
                                 scales: {
-                                    xAxes: [{
+                                    x: {
                                         gridLines: {
                                             color: 'rgba(200, 200, 200, 0.05)',
                                             lineWidth: 1
                                         }
-                                    }],
-                                    yAxes: [{
+                                    },
+                                    y: {
                                         gridLines: {
                                             color: 'rgba(200, 200, 200, 0.08)',
                                             lineWidth: 1
                                         }
-                                    }]
+                                    }
                                 },
                                 
                             };
@@ -171,20 +173,27 @@
                                 type: 'line',
                                 data: data,
                                 options: {
+                                    plugins: {
+                                        legend: {
+                                            display: false,
+                                        },
+                                    },
                                     tooltips: {
                                         enabled: false,
                                     },
-                                    legend: {
-                                        display: false,
+                                    
+                                    elements: {
+                                        point:{
+                                            radius: 0
+                                        }
                                     },
-                                    pointDot: false,
                                     scales: {
-                                        xAxes: [{
+                                        x: {
                                             display: false,
-                                        }],
-                                        yAxes: [{
+                                        },
+                                        y: {
                                             display: false,
-                                        }],
+                                        },
                                     }
                                 }
                             });
@@ -209,8 +218,8 @@
                         </div>
                         <canvas id="sellprice_chart" class="price_chart"></canvas>
                         <script>
-                            var chart = document.getElementById('sellprice_chart').getContext('2d'),
-                                gradient = chart.createLinearGradient(0, 0, 0, 450);
+                            var chart = document.getElementById('sellprice_chart').getContext('2d');
+                            var gradient = chart.createLinearGradient(0, 0, 0, 450);
 
                             gradient.addColorStop(0, 'rgba(255, 42,29, .55)');
                             gradient.addColorStop(0.5, 'rgba(255, 42,29, .015)');
@@ -223,6 +232,8 @@
                                 datasets: [{
                                     backgroundColor: gradient,
                                     pointBackgroundColor:false,
+                                    fill: true,
+                                    tension: 0.4,
                                     borderWidth: 10,
                                     borderColor: '#FF4848',
                                     data: [90, 50,80, 40,20]
@@ -233,23 +244,23 @@
                             var options = {
                                 responsive: true,
                                 maintainAspectRatio: true,
-                                animation: {
-                                    easing: 'easeInOutQuad',
-                                    duration: 520
-                                },
+                                // animation: {
+                                //     easing: 'easeInOutQuad',
+                                //     duration: 520
+                                // },
                                 scales: {
-                                    xAxes: [{
-                                        gridLines: {
+                                    x: {
+                                        grid: {
                                             color: 'rgba(200, 200, 200, 0.05)',
                                             lineWidth: 1
                                         }
-                                    }],
-                                    yAxes: [{
-                                        gridLines: {
+                                    },
+                                    y: {
+                                        grid: {
                                             color: 'rgba(200, 200, 200, 0.08)',
                                             lineWidth: 1
                                         }
-                                    }]
+                                    }
                                 },
                                 
                             };
@@ -262,17 +273,24 @@
                                     tooltips: {
                                         enabled: false,
                                     },
-                                    legend: {
-                                        display: false,
+                                    plugins: {
+                                        legend: {
+                                            display: false,
+                                        },
                                     },
-                                    pointDot: false,
+                                    
+                                    elements: {
+                                        point:{
+                                            radius: 0
+                                        }
+                                    },
                                     scales: {
-                                        xAxes: [{
+                                        x: {
                                             display: false,
-                                        }],
-                                        yAxes: [{
+                                        },
+                                        y: {
                                             display: false,
-                                        }],
+                                        },
                                     }
                                 }
                             });
@@ -352,19 +370,27 @@
                 </div>
                 <div class="pricechart_timeline">
                     <ul class="pricechart_tabs-list">
-                        <li class="active"><a href="#tab1">1d</a></li>
+                        <!-- <li class="active"><a href="#tab1">1d</a></li>
                         <li><a href="#tab2">2w</a></li>
                         <li><a href="#tab3">1m</a></li>
                         <li><a href="#tab4">6m</a></li>
-                        <li><a href="#tab5">1y</a></li>
+                        <li><a href="#tab5">1y</a></li> -->
+                        <li><button onclick="timeFrame(this)" value="oneweek">7d</button></li>
+                    <li class="active"><button onclick="timeFrame(this)" value="twoweek">2w</button></li>
+                    <li><button onclick="timeFrame(this)" value="onemonth">1m</button></li>
+                    <li><button onclick="timeFrame(this)" value="sixmonth">6m</button></li>
+                    <li><button onclick="timeFrame(this)" value="oneyear">1y</button></li>
                     </ul>
-                    <button><img src="images/icons/inbox-in.svg" alt=""></button>
+                    <button class="export"><img src="images/icons/inbox-in.svg" alt=""></button>
                 </div>
             </div>
+            <div>
+                <canvas id="myChart"></canvas>
+              </div>
             <div class="pricechart_tabs">
                 <div id="tab1" class="pricechart_tab">
-                    <canvas id="chart"></canvas>
-                    <script>
+                    <!-- <canvas id="chart"></canvas> -->
+                    <!-- <script>
                         var chart = document.getElementById('chart').getContext('2d'),
                             gradient = chart.createLinearGradient(0, 0, 0, 450);
 
@@ -438,7 +464,7 @@
                             data: data,
                             options: options
                         });
-                    </script>
+                    </script> -->
                 </div>
                 <div id="tab2" class="pricechart_tab">
                     chart2
@@ -719,6 +745,265 @@
     });
 </script>
 
+<script>
+    const oneweek = [
+        { x: Date.parse('2022-10-01'), y: 0},
+        { x: Date.parse('2022-10-02'), y: 236},
+        { x: Date.parse('2022-10-03'), y: 238},
+        { x: Date.parse('2022-10-04'), y: 240},
+        { x: Date.parse('2022-10-05'), y: 245},
+        { x: Date.parse('2022-10-06'), y: 228},
+        { x: Date.parse('2022-10-07'), y: 236}
+    ];
+
+    const twoweek = [
+        { x: Date.parse('2022-10-09'), y: 236},
+        { x: Date.parse('2022-10-11'), y: 236},
+        { x: Date.parse('2022-10-13'), y: 238},
+        { x: Date.parse('2022-10-14'), y: 240},
+        { x: Date.parse('2022-10-15'), y: 242},
+        { x: Date.parse('2022-10-17'), y: 243},
+        { x: Date.parse('2022-10-21'), y: 237},
+        { x: Date.parse('2022-10-23'), y: 244},
+        // { x: Date.parse('2022-10-25'), y: 242},
+        // { x: Date.parse('2022-10-27'), y: 236},
+        // { x: Date.parse('2022-11-01'), y: 242},
+        // { x: Date.parse('2022-11-03'), y: 241}
+    ]
+   res = Math.max.apply(Math, twoweek.map(function(o) { return o.y; }))
+   res1 = Math.min.apply(Math, twoweek.map(function(o) { return o.y; }))
+
+    const onemonth = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 800},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+
+    const sixmonth = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 800},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+    const oneyear = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 800},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var gradientBg = ctx.createLinearGradient(0, 0, 0, 450);
+
+    gradientBg.addColorStop(0, '#FED777');
+    gradientBg.addColorStop(0.5, 'rgba(254, 215,119, .75)');
+    gradientBg.addColorStop(1, 'rgba(255, 250,244, 0.5)');
+    // const gradientBg = ctx.createLinearGradient(0, 0, 0, 400);
+    // gradientBg.addColorStop(0, '#FED777');
+    // gradientBg.addColorStop(1, 'rgba(255, 250, 244, 0)');
+    var data = {
+    //   labels: labels,
+      datasets: [{
+        label: 'Prices',
+        // backgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor: gradientBg,
+        borderColor: '#FED777',
+        data: twoweek,
+        tension: 0.3,
+        fill: true,
+        pointHoverBorderColor: '#4FE37E',
+        pointHoverBackgroundColor: '#4FE37E',
+        // pointBorderWidth:3,
+        pointHoverBorderWidth: 3,
+        pointRadius: 3,
+        pointBackgroundColor: "#ffff00",
+        pointHoverRadius: 3
+      }]
+    };
+   
+    //tooltipLine Block
+    var tooltipLine = {
+        id: 'tooltipLine',
+        afterDraw: chart => {
+            if(chart.tooltip._active && chart.tooltip._active.length){
+                var ctx = chart.ctx;
+                ctx.save();
+                var activePoint = chart.tooltip._active[0];
+
+                ctx.beginPath();
+                ctx.setLineDash([5, 7]);
+                ctx.moveTo(activePoint.element.x, activePoint.element.y);
+                ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#57C4CC';
+                ctx.stroke();
+                ctx.restore();
+            }
+
+        }
+    }
+    var config = {
+        type: 'line',
+        data: data,
+        options: {
+            locale: 'en-US',
+            scales:{
+                x: {
+                    offset: true,
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: {
+                            day: 'dd MMM'
+                        }
+                    },
+                    grid: {
+                        // display: false,
+                        display: true,
+                        drawOnChartArea: false,
+                        tickColor: '#999',
+                        position: 'right'
+                    },
+                    ticks: {
+                        color: "#9A9A9A",
+                    },
+                },
+
+                y: {
+                    offset: true,
+                    grace: '5%',
+                    // beginAtZero: true,
+                    // maxTicksLimit: 5,
+                    // min: 236,
+                    grid: {
+                        display: false,
+                        drawBorder: false,
+                    },
+                    ticks: {
+                        callback: function(label, index, labels) {
+                            return label + ".00";
+                        },
+                        color: "#9A9A9A",
+                    },
+                }   
+
+            },
+            plugins: {
+                autocolors: false,
+                annotation: {
+                    annotations: {
+                        line1: {
+                            type: 'line',
+                            yMin: res1,
+                            yMax: res1,
+                            borderColor: '#999',
+                            borderWidth: 2,
+                            borderDash: [2,2],
+                        },
+                        line2: {
+                            type: 'line',
+                            yMin: res,
+                            yMax: res,
+                            borderColor: '#999',
+                            borderWidth: 2,
+                            borderDash: [2,2],
+
+                        }
+                    }
+                },
+                legend: {
+                    display:false
+                },
+                tooltip: {
+                    callbacks: {
+                        
+                        title: ()=>{},
+                        label: (context)=>{ 
+                            values = (Math.round(context.formattedValue * 100) / 100).toFixed(2);
+                            return "RM "+values
+                        }
+                    },
+                    displayColors: false,
+                    caretSize: 0,
+                    caretPadding: 10,
+                    backgroundColor: '#0DB14B',	
+                    titleFontColor: '#fff',	
+                    // caretSize: 5,	
+                    cornerRadius: 15,	
+                    xPadding: 15,	
+                    yPadding: 15
+                },
+                
+            },
+            
+        },
+        plugins: [tooltipLine]
+    };
+</script>
+<script>
+var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
+
+function timeFrame(period){
+    if(period.value == 'oneweek'){
+        myChart.config.options.scales.x.time.unit = 'day';
+        myChart.config.data.datasets[0].data = oneweek;
+        
+        maxValue = Math.max.apply(Math, oneweek.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, oneweek.map(function(o) { return o.y; }))
+        
+    }
+    if(period.value == 'twoweek'){
+        myChart.config.options.scales.x.time.unit = 'day';
+        myChart.config.data.datasets[0].data = twoweek;
+        maxValue = Math.max.apply(Math, twoweek.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, twoweek.map(function(o) { return o.y; }))
+    }
+    if(period.value == 'onemonth'){
+        myChart.config.options.scales.x.time.unit = 'week';
+        myChart.config.data.datasets[0].data = onemonth;
+        maxValue = Math.max.apply(Math, onemonth.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, onemonth.map(function(o) { return o.y; }))
+    }
+    if(period.value == 'sixmonth'){
+        myChart.config.options.scales.x.time.unit = 'month';
+        myChart.config.data.datasets[0].data = sixmonth;
+        maxValue = Math.max.apply(Math, sixmonth.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, sixmonth.map(function(o) { return o.y; }))
+    }
+    if(period.value == 'oneyear'){
+        myChart.config.options.scales.x.time.unit = 'year';
+        myChart.config.data.datasets[0].data = oneyear;
+        maxValue = Math.max.apply(Math, oneyear.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, oneyear.map(function(o) { return o.y; }))
+    }
+    myChart.config.options.plugins.annotation.annotations.line1.yMin = minValue;
+    myChart.config.options.plugins.annotation.annotations.line1.yMax = minValue;
+    myChart.config.options.plugins.annotation.annotations.line2.yMin = maxValue;
+    myChart.config.options.plugins.annotation.annotations.line2.yMax = maxValue;
+    myChart.update();
+}
+</script>
 
 <!-- Modal- Prices' input field  -->
 <script>

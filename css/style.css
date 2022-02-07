@@ -692,7 +692,7 @@ canvas.price_chart {
     margin-bottom: 22px
 }
 
-.pricechart_timeline button {
+.pricechart_timeline .export {
     background-image: linear-gradient(to bottom, #4FE37E, #0DB14B);
     border: 0;
     border-radius: 15px;
@@ -704,6 +704,19 @@ canvas.price_chart {
     align-items: center;
     justify-content: center;
 }
+
+/* .pricechart_timeline button {
+    background-image: linear-gradient(to bottom, #4FE37E, #0DB14B);
+    border: 0;
+    border-radius: 15px;
+    width: 40px;
+    text-align: center;
+    height: 27px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
 
 .pricechart_timeline button img,
 .pricechart_details span img {
@@ -739,10 +752,18 @@ canvas.price_chart {
     cursor: pointer;
 }
 
-.pricechart_tabs-list li a {
+/* .pricechart_tabs-list li a {
     text-decoration: none;
     color: #999;
     font-weight: medium;
+} */
+
+.pricechart_tabs-list li button {
+    text-decoration: none;
+    color: #999;
+    font-weight: medium;
+    border:none;
+    background-color:#fff;
 }
 
 .pricechart_tab {
