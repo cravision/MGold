@@ -1,39 +1,99 @@
 <div class="side-bar-desktop">
     <ul class="features-list">
-        <li class="features-item active">
-            <a class="d-flex align-items-center">
+        <li class="features-item">
+            <a href="index.html" class="d-flex align-items-center">
                 <img src="images/icons/th-large-active.svg" class="active" alt="">
                 <img src="images/icons/th-large.svg" alt="">
-                <span class="features-item-text">Dashboard</span>
+                <span class="features-item-text">DASHBOARD</span>
             </a>
         </li>
 
         <li class="features-item">
-            <a class="d-flex align-items-center">
+            <a href="register.html" class="d-flex align-items-center">
             <img src="images/icons/pen-square.svg" alt="">
             <img src="images/icons/pen-square-active.svg" class="active" alt="">
-            <span class="features-item-text">Register</span>
+            <span class="features-item-text">REGISTER</span>
+        </a>
+        </li>
+        
+        <li class="features-item">
+            <a  href="history.html" class="d-flex align-items-center">
+            <img src="images/icons/sync-alt(w).svg" alt="">
+            <img src="images/icons/sync-alt-g.svg" class="active" alt="">
+            <span class="features-item-text">HISTORY</span>
         </a>
         </li>
 
+        <li class="features-item">
+            <a  href="reward.html" class="d-flex align-items-center">
+            <img src="images/icons/gift.svg" alt="">
+            <img src="images/icons/gift (3).svg" class="active" alt="">
+            <span class="features-item-text">REWARDS</span>
+        </a>
+        </li>
+        <li class="features-item">
+            <a href="profile.html" class="d-flex align-items-center">
+            <img src="images/icons/user.svg" alt="">
+            <img src="images/icons/user (2).svg" class="active" alt="">
+            <span class="features-item-text">PROFILE</span>
+        </a>
+        </li>
+
+        <!-- submenu -->
+
         <li class="features-item menu_disable">
-            <a class="d-flex align-items-center">
+            <a href="f&q.html" class="d-flex align-items-center">
             <img src="images/icons/comment-lines.svg" alt="">
-            <span class="features-item-text">Starred</span>
+            <span class="features-item-text">F&Qs</span>
         </a>
         </li>
         <li class="features-item menu_disable">
-            <a class="d-flex align-items-center">
+            <a href="setting.html" class="d-flex align-items-center">
             <img src="images/icons/wrench.svg" alt="">
-            <span class="features-item-text">Sent</span>
+            <span class="features-item-text">Setting</span>
         </a>
         </li>
         <button id="click-open">click</button>
     </ul>
+</div>
 
-
-
-
+<div class="side-bar-mobile">
+    <div class="nav_bar">
+        <a href="index.html" class="text-center">
+          <div class="d-flex justify-content-center">
+            <img src="images/icons/th-large-active.svg" class="active" alt="">
+            <img src="images/icons/th-large.svg" alt="">
+          </div>
+            <div class="mt-1">DASHBOARD</div>
+        </a>
+    </div>
+    <div class="nav_bar">
+        <a  href="history.html" class="text-center">
+            <div class="d-flex justify-content-center">
+                <img src="images/icons/sync-alt(w).svg" alt="">
+                <img src="images/icons/sync-alt-g.svg" class="active" alt="">
+            </div>
+            <div class="mt-1">HISTORY</div>
+        </a>
+    </div>
+    <div class="nav_bar">
+        <a  href="reward.html" class="text-center">
+            <div class="d-flex justify-content-center">
+                <img src="images/icons/gift.svg" alt="">
+                <img src="images/icons/gift (3).svg" class="active" alt="">
+            </div>
+            <div class="mt-1">REWARDS</div>
+        </a>
+    </div>
+    <div class="nav_bar">
+        <a href="profile.html" class="text-center">
+            <div class="d-flex justify-content-center">
+                <img src="images/icons/user.svg" alt="">
+                <img src="images/icons/user (2).svg" class="active" alt="">
+            </div>
+            <div class="mt-1">PROFILE</div>
+        </a>
+    </div>
 </div>
 <script type="text/javascript">
     {
@@ -46,3 +106,25 @@
         };
     }
 </script>
+
+<script>
+  $(function() {
+     var pgurl = window.location.href.substr(window.location.href
+.lastIndexOf("/")+1);
+     $(".nav_bar a ").each(function(){
+          if($(this).attr("href") == pgurl || $(this).attr("href") == '' )
+          $(this).addClass("active"); 
+     })
+});
+</script>
+
+<script>
+    $(function() {
+       var pgurl = window.location.href.substr(window.location.href
+  .lastIndexOf("/")+1);
+       $(".features-item a ").each(function(){
+            if($(this).attr("href") == pgurl || $(this).attr("href") == '' )
+            $(this).parent("li").addClass("active"); 
+       })
+  });
+  </script>

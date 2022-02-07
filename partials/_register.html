@@ -20,25 +20,27 @@
             <div class="register_title">
                 Create Go Gold Account
             </div>
-            <div class="text_field">
-                <label class="form_titlelabel" for="fullname">FULL NAME (AS PER NRIC)</label>
-                <input name="fullname" type="text" value="">
-            </div>
-            <div class="text_field">
-                <label class="form_titlelabel" for="email">Email</label>
-                <input name="email" type="text" value="">
-            </div>
-            <div class="text_field">
-                <label class="form_titlelabel" for="NRIC">NRIC</label>
-                <input name="NRIC" type="number" value="">
-            </div>
-            <div class="text_field">
-                <label class="form_titlelabel" for="mobile">MOBILE</label>
-                <input name="mobile" type="number" value="">
-            </div>
-            <div class="text_field">
-                <label class="form_titlelabel" for="address">Address</label>
-                <input name="address" type="text" value="">
+            <div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="fullname">FULL NAME (AS PER NRIC)</label>
+                    <input name="fullname" type="text" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="email">Email</label>
+                    <input name="email" type="text" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="NRIC">NRIC</label>
+                    <input name="NRIC" type="number" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="mobile">MOBILE</label>
+                    <input name="mobile" type="number" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="address">Address</label>
+                    <input name="address" type="text" value="">
+                </div>
             </div>
             <div class="d-flex justify-content-between">
                 <div class="text_field30">
@@ -80,7 +82,7 @@
                 Create Go Gold Account
             </div>
             <div class="text_field">
-                <label class="selecttion_label" for="bankname">BANK NAME</label>
+                <label class="selecttion_label2" for="bankname">BANK NAME</label>
                 <div>
                     <select name="" id="register_selection2">
                         <option value="1">Bank 1</option>
@@ -95,7 +97,7 @@
                 <input name="bankno" type="number" value="">
             </div>
             <div class="text_field">
-                <label class="selecttion_label" for="categories">OCCUPATION CATEGORY</label>
+                <label class="selecttion_label2" for="categories">OCCUPATION CATEGORY</label>
                 <div>
                     <select name="" id="register_selection3">
                         <option value="1">category 1</option>
@@ -147,6 +149,7 @@
         </fieldset>
     </form>
 </div>
+<div id="footer_include"></div>
 
 
 <script>
@@ -238,5 +241,8 @@
 <!-- select option - register -->
 
 <script>
-    $("#register_selection, #register_selection2,#register_selection3").ddslick();
+    $("#register_selection").ddslick();
+    $("#register_selection2").ddslick();
+    $("#register_selection3").ddslick();
+
 </script>
