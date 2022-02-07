@@ -180,8 +180,8 @@ footer span {
 
 .features-item {
     cursor: pointer;
-    margin: 5px 15px;
-    padding: 10px 20px;
+    margin: 5px;
+    padding: 10px 24px;
     border-radius: 30px;
     font-weight: bold;
     font-size: 14px
@@ -283,21 +283,68 @@ footer span {
 
 #click-open {
     position: absolute;
-    top: 40%
+    top: 60%
+}
+
+.side-bar-mobile {
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    padding: 10px 0px;
+    bottom: 0;
+    z-index: 2000;
+    flex-wrap: wrap;
+    display: none;
+
+}
+
+.side-bar-mobile .nav_bar {
+    width: 25%;
+
+
+}
+
+.side-bar-mobile .nav_bar img {
+    height: 30px;
+
+}
+
+.side-bar-mobile .nav_bar a img.active,
+.side-bar-mobile .nav_bar a.active img {
+    display: none;
+}
+
+
+.side-bar-mobile .nav_bar a.active img.active,
+.side-bar-mobile .nav_bar a img {
+    display: block;
+}
+
+.side-bar-mobile .nav_bar a {
+    font-size: 10px;
+    text-decoration: none;
+    color: #999999;
+    font-weight: bold;
+}
+
+.side-bar-mobile .nav_bar a.active {
+    color: #4FE37E;
 }
 
 /* main */
 
 #main {
     display: flex;
+    justify-content: space-between;
 }
 
 #main.toggle_width #sidebar_include {
-    width: 8%
+    width: 5%;
+    float: left
 }
 
 #main.toggle_width #main_include {
-    width: 92%;
+    width: 94%;
 
 }
 
@@ -311,6 +358,7 @@ footer span {
     background-color: #F5F5F7;
     border-top-left-radius: 30px;
     margin-top: 60px;
+    min-height: 100vh;
 }
 
 .data_row {
@@ -350,11 +398,18 @@ footer span {
 .register_promo_button a {
     background: linear-gradient(to bottom, #4FE37E, #0DB14B);
     padding: 10px 30px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 30px;
     color: #fff;
     font-size: 16px;
     text-decoration: none;
+    width: 217px;
+}
+
+.register_promo_button a img {
+    margin-right: 5px;
 }
 
 .dashboard_overview {
@@ -365,16 +420,72 @@ footer span {
     justify-content: space-around;
 }
 
+.dashboard_overview_mobile {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
 .overview_status {
     width: 20%;
     text-align: center;
+}
+
+
+.overview_status_mobile {
+    width: 100%;
+    padding: 10px;
+}
+
+.overview_status_mobile .status_title {
+    font-size: 7px;
+}
+
+.overview_status_mobile .status_title span {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px
+}
+
+.overview_mobile_dropdown.active {
+    height: 154px;
+    transition: .5s;
+}
+
+.overview_mobile_dropdown {
+    height: 20px;
+    transition: .5s;
+}
+
+.overview_mobile_dropdown .dropdown_item {
+    display: none
+}
+
+.overview_mobile_dropdown.active .dropdown_item {
+    display: block
 }
 
 .status_title {
     font-size: 11px;
     font-weight: 500;
     color: #999;
+}
 
+.overview_mobile_dropdown.active .status_title i {
+    transform: rotate(180deg);
+    transition: .5s;
+}
+
+.status_title i {
+    float: right;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.dashboard_buysell_bxs {
+    display: flex;
+    justify-content: space-between;
 }
 
 .buysell_bx {
@@ -388,7 +499,8 @@ footer span {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #555555
+    color: #555555;
+    width:100%;
 }
 
 .dashboard_subtitle {
@@ -401,6 +513,7 @@ footer span {
     display: flex;
     align-items: center;
     margin-bottom: 22px;
+    float: right;
 }
 
 .bx_title {
@@ -438,8 +551,14 @@ footer span {
 
 .prices_rates_up,
 .prices_rates_down {
-    width: 50%;
+    width: 55%;
     text-align: center;
+}
+
+canvas.price_chart {
+    width: 35% !important;
+    padding: 20px;
+    height: 100% !important;
 }
 
 .prices_rates_up span,
@@ -698,7 +817,6 @@ footer span {
 
 .prices_notice {
     width: 10%;
-    font-size: 25px;
     color: #C4C4C4;
     text-align: center;
 }
@@ -1000,6 +1118,7 @@ input:checked+.switch:active:before {
 .reward_content {
     background: #fff;
     border-radius: 20px;
+    margin:0 10px;
 }
 
 .reward_content img {
@@ -1124,11 +1243,11 @@ input:checked+.switch:active:before {
 .text_field {
     width: 100%;
     text-align: left;
+
 }
 
 .text_field30 {
     width: 33%;
-    float: left;
     text-align: left;
 }
 
@@ -1143,6 +1262,16 @@ input:checked+.switch:active:before {
     color: #555;
     margin-top: 10px;
     font-weight: 500;
+}
+
+label.selecttion_label2 {
+    margin-top: 5px;
+    position: absolute;
+    font-size: 10px;
+    margin-left: 20px;
+    color: #555;
+    z-index: 1000;
+    font-weight: 300;
 }
 
 .text_field label.form_titlelabel,
@@ -1252,6 +1381,31 @@ label.selecttion_label {
     margin: 20px 0;
 }
 
+#register_selection .dd-options,
+#register_selection2 .dd-options,
+#register_selection3 .dd-options {
+    width: 100% !important;
+    padding-top: 22px !important;
+    margin-top: -22px !important;
+    border-radius: 0px !important;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 30px !important;
+    border-bottom-right-radius: 30px !important;
+    box-shadow: unset !important;
+}
+
+#register_selection3 .dd-option,
+#register_selection2 .dd-option,
+#register_selection .dd-option {
+    padding: 9px 20px !important;
+  }
+
+  #register_selection .dd-option-text,
+  #register_selection2 .dd-option-text,
+  #register_selection3 .dd-option-text {
+    font-size: 13px !important;
+  }
 /* confirm_process - modal */
 .modal_back_btn {
     background: #fff !important;
@@ -1375,4 +1529,522 @@ label.selecttion_label {
     margin-bottom: 20px;
     font-size: 20px;
     color: #555;
+}
+
+/* history */
+
+.history_accordion {
+    width: 100%;
+    padding: 0 !important;
+}
+
+.history_accordion .history_link {
+    cursor: pointer;
+    display: block;
+    color: #999999;
+    font-size: 18px;
+    padding: 10px 15px;
+    font-weight: 300;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.history_accordion li {
+    list-style: none;
+    border-radius: 20px;
+    margin: 5px 0px;
+    background: #FFF;
+}
+
+.history_accordion li:last-child .history_link {
+    border-bottom: 0;
+}
+
+.history_accordion li i {
+    position: absolute;
+    top: 17px;
+    left: 12px;
+    font-size: 15px;
+    color: #999999 !important;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.history_accordion li i.fa-chevron-down {
+    right: 25px;
+    left: auto;
+    font-size: 16px;
+    color: #999999;
+}
+
+.history_accordion li.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* details */
+
+.submenu {
+    display: none;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.history_data table {
+    width: 90%
+}
+
+.history_data table thead {
+    font-size: 10px;
+    color: #555555;
+    font-weight: 300;
+}
+
+.history_data table tbody tr {
+    border-bottom: 1px solid #D3D3D3;
+    font-size: 14px;
+}
+
+.history_data table tbody tr:last-child {
+    border-bottom: 0;
+}
+
+
+.history_data table tbody tr td {
+    padding: 15px 0;
+}
+
+.price_up {
+    color: #1AC69C;
+    font-weight: bold;
+}
+
+.price_down {
+    color: #FF4848;
+    font-weight: bold;
+}
+
+
+
+/* responsive */
+@media screen and (min-width:1530px) {
+    #main.toggle_width #main_include {
+        width: 94%;
+    }
+}
+
+@media screen and (min-width:1920px) {
+    #main.toggle_width #main_include {
+        width: 96%;
+    }
+
+    #main_include {
+        width: 86%;
+    }
+
+}
+
+@media screen and (min-width:920px) {
+    .Mobile {
+        display: none;
+    }
+
+    .Desktop {
+        display: block
+    }
+}
+
+@media screen and (max-width:920px) {
+    .Mobile {
+        display: block;
+    }
+
+    .Desktop {
+        display: none
+    }
+}
+
+
+
+/* Ipad Pro */
+@media screen and (max-width:1080px) {
+    #main_include {
+        width: 76%;
+    }
+
+    .prices_rates_up span,
+    .prices_rates_down span {
+        font-size: 34px;
+    }
+
+    .buy_btn,
+    .sell_btn {
+        font-size: 22px;
+    }
+
+    .data_row3 .shortclick img {
+        margin-right: 7px;
+    }
+
+    .register_main form {
+        width: 90%;
+    }
+
+    .bcard__body {
+        font-size: 15px;
+    }
+
+    .dashboard_overview {
+        padding: 5px;
+    }
+}
+
+/* Ipad & Surface Pro */
+@media screen and (max-width:920px) {
+
+    .side-bar-desktop {
+        display: none
+    }
+
+    #main_include {
+        width: 100%;
+        border-top-left-radius: 0px;
+        padding: 30px;
+    }
+
+    #sidebar_include {
+        width: 0%
+    }
+
+    .side-bar-mobile {
+        display: flex;
+    }
+
+    .register_main form {
+        width: 100%;
+    }
+
+    .dashboard_overview {
+        padding: 7px;
+    }
+
+    .bcard__body {
+        font-size: 15px;
+    }
+
+}
+
+/* mobile */
+@media screen and (max-width:430px) {
+    #main_include {
+        padding: 10px;
+    }
+
+    .register_promo_banner {
+        width: 50%;
+    }
+
+    .data_row {
+        padding: 15px;
+    }
+
+    .register_promo_banner img {
+        width: 100%
+    }
+
+    .register_promo_main {
+        font-size: 10px;
+    }
+
+    .register_promo_button a {
+        padding: 5px 18px;
+        font-size: 10px;
+        width: 117px;
+    }
+
+
+    .register_promo_button a img {
+        height: 12px;
+    }
+
+    .register_promo_button {
+        margin-top: 10px;
+    }
+
+    .register_promo_main span {
+        font-size: 9px;
+    }
+
+    .buysell_bx {
+        width: 100%;
+        margin-bottom: 25px;
+        padding: 15px;
+    }
+
+    .dashboard_buysell_bxs {
+        flex-wrap: wrap;
+    }
+
+    .buysell_status {
+        font-size: 10px;
+    }
+
+    .green_status {
+        height: 8px;
+        width: 8px;
+        margin-left: 5px;
+    }
+
+    .dashboard_title {
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .dashboard_subtitle {
+        font-size: 8px;
+        font-weight: 500;
+    }
+    .buy_btn, .sell_btn {
+        margin-top: 14px;
+        margin-bottom: -31px;
+        padding: 5px 0;
+       
+      }
+      .buy_btn, .sell_btn {
+        font-size: 16px;
+      }
+      .data_row3 .shortclick{
+          width:100%;
+          margin-bottom: 7px;
+      }
+      .data_row3 {
+        flex-wrap: wrap;
+      }
+
+      .data_row2, .data_row3, .data_row4, .data_row5 {
+        margin-top: 28px;
+      }
+      .side-bar-mobile .nav_bar a {
+        font-size: 9px;
+        color: #999999;
+        font-weight: bold;
+      }
+
+      .side-bar-mobile .nav_bar img {
+        height: 20px;
+      }
+
+      .news a {
+        width: 100%;
+ margin-bottom:10px;
+      }
+
+      .reward_content_title {
+        padding: 10px 10px 0px 10px;
+        font-size: 14px;
+      }
+
+      .reward_content {
+        margin:0;
+    }
+
+    .reward_content_button {
+        font-size: 12px;
+      }
+      .reward_content_button .btn_prev,
+      .reward_content_button .btn_next {
+        padding: 5px 20px;
+        width: 130px;
+      }
+
+      .reward_content_details {
+        font-size: 11px;
+      }
+      .header_logo img{
+          width:110px
+      }
+      .history_data table {
+        width: 100%;
+      }
+
+      .history_data table tbody tr {
+        font-size: 9px;
+      }
+
+      .history_data table thead {
+        font-size: 7px;
+        color: #555555;
+        font-weight: 300;
+      }
+
+      .history_accordion .history_link {
+        font-size: 14px;
+      }
+      .history_accordion li i {
+        top: 13px;
+      }
+
+      #footer_include{
+          margin-bottom:20px
+      }
+
+      .register_main fieldset {
+        padding: 20px;
+        margin:0px;
+      }
+
+      #register_progressbar {
+        width: 77%;
+        left: 10%;
+      }
+      .register_main input[type="submit"], .register_main input[type="button"] {
+        width: 105px;
+        font-size: 13px;
+      }
+
+      .register_agree {
+        font-size: 10px;
+      }
+      .registed_alert {
+        font-size: 12px;
+      }
+      
+      .modal_title {
+        font-size: 16px;
+      }
+
+      .modal-content {
+        padding: 20px;
+        margin-bottom: 60px;
+      }
+
+      .modal_close {
+        top: -29px;
+        right: 3px;
+      }
+
+      .aqad_info {
+        font-size: 11px;
+      }
+
+      .aqad_total {
+        font-size: 30px;
+      }
+
+      .aqad_notice {
+        font-size: 10px;
+      }
+
+      .aqad_countdown {
+        margin: 10px 0px;
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+      
+      .countdown {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .digit-group input {
+        width: 35px;
+        height: 35px;
+        border-radius: 12px;
+      }
+      .modal_process_btn,
+      .modal_back_btn,
+      .modal_buy_btn {
+        width: 125px;
+        padding:6px;
+        font-size: 13px;
+      }
+
+      #confirm_process .modal-body {
+        font-size: 13px;
+      }
+
+      #confirm_process .modal-footer{
+          padding:0px;
+      }
+
+      .modal_prices .current_prices {
+        font-size: 8px;
+      }
+
+      .modal_prices span {
+        font-size: 16px;
+      }
+      .notice_tooltips i {
+        font-size: 16px;
+      }
+
+      .modal_butinput {
+        font-size: 10px;
+      }
+      .modal_prices_input input {
+        font-size: 30px;
+      }
+      .modal_pricegram {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #modal_payment_method .dd-selected-text {
+        font-size: 11px;
+      }
+      .dd-option-image, .dd-selected-image {
+        max-width: 50px;
+      }
+      .dd-option {
+        padding: 20px 20px !important;
+      }
+      .dd-desc {
+        font-size: 9px !important;
+      }
+
+      .dd-option-text {
+        font-size: 10px;
+      }
+
+      .modal_total_g {
+        font-size: 10px;
+      }
+      .total_g_price {
+        font-size: 19px;
+      }
+
+      .modal_agree {
+        font-size: 9px;
+        margin-top:16px;
+      }
+
+      #register_selection .dd-option-text,
+      #register_selection2 .dd-option-text,
+      #register_selection3 .dd-option-text {
+        font-size: 13px !important;
+      }
+
+      .bx_title {
+        font-size: 19px;
+      }
+      .prices_rates_up span, .prices_rates_down span {
+        font-size: 28px;
+      }
+
+      canvas.price_chart {
+        padding: 5px;
+      }
+
+      .pricechart_details span {
+        font-size: 10px;
+        width: 85px;
+      }
+      .pricechart_timeline button img, .pricechart_details span img {
+        width: 14px;
+      }
 }
