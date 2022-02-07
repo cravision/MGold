@@ -1,0 +1,1081 @@
+<div class="container">
+    <button data-bs-toggle="modal" data-bs-target="#confirm_process">confirm process</button>
+    <button data-bs-toggle="modal" data-bs-target="#e-aqad">E-AQAD</button>
+    <!-- before login -->
+
+    <div class="data_row">
+        <div class="register_promo">
+            <div class="register_promo_main">
+                <div> Receive FREE Digital GOLD Worth RM10 Upon Registration</div>
+                <div><span>Purchase gold and stand a chance to win 1 gram of digital gold! </span></div>
+                <div class="register_promo_button"><a href="register.html"><img src="images/icons/donate.svg" alt="">
+                        Register Now</a></div>
+            </div>
+            <div class="register_promo_banner">
+                <img src="images/Mask Group.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- After login Desktop -->
+    <div class="dashboard_title Desktop">
+        Overview
+    </div>
+    <div class="data_row Desktop">
+        <div class="dashboard_overview">
+            <div class="overview_status">
+                <div class="status_title">
+                    MY GOLD 999.9
+                </div>
+                <span style="color:#FEC949; font-size: 20px;font-weight: bold;">130.02g</span>
+            </div>
+            <div class="overview_status">
+                <div class="status_title">
+                    AVG PURCHASE PRICE
+                </div>
+                <span style="color:#000; font-size: 20px;font-weight: bold;">RM244.46/g</span>
+            </div>
+            <div class="overview_status">
+                <div class="status_title">
+                    TOTAL PURCHASED
+                </div>
+                <span style="color:#000; font-size: 20px;font-weight: bold;">RM2,088.00</span>
+            </div>
+            <div class="overview_status">
+                <div class="status_title">
+                    PERCENTAGE
+                </div>
+                <span style="color:#FF4848; font-size: 20px;font-weight: bold;">2.02%</span>
+            </div>
+            <div class="overview_status">
+                <div class="status_title">
+                    CURRENT GOLD VALUE
+                </div>
+                <span style="color:#1AC69C; font-size: 20px;font-weight: bold;">RM2,000.18</span>
+            </div>
+        </div>
+    </div>
+
+        <!-- After login Mobile -->
+        <div class="data_row Mobile">
+            <div class="dashboard_overview_mobile">
+                <div class="overview_status_mobile border-bottom">
+                    <div class="status_title ">
+                        MY GOLD 999.9
+                    </div>
+                    <span style="color:#FEC949; font-size: 20px;font-weight: bold;">130.02g</span>
+                </div>
+                <div class="overview_mobile_dropdown">
+                    <div class="overview_status_mobile">
+                        <div class="status_title click">
+                            CURRENT GOLD VALUE   <span style="color:#1AC69C;">RM2,000.18</span> <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="overview_status_mobile dropdown_item">
+                        <div class="status_title">
+                            AVG PURCHASE PRICE   <span style="color:#000;">RM244.46/g</span>
+                        </div>
+                    </div>
+                    <div class="overview_status_mobile dropdown_item">
+                        <div class="status_title">
+                            TOTAL PURCHASED   <span style="color:#000;">RM2,088.00</span>
+                        </div>
+                      
+                    </div>
+                    <div class="overview_status_mobile dropdown_item">
+                        <div class="status_title">
+                            PERCENTAGE  <span style="color:#FF4848;">2.02%</span>
+                        </div>
+                      
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+    <div class="data_row2">
+        <div class="d-flex">
+            <div class="dashboard_title">
+               <div>Trade Gold at Today’s Price </div>
+                <span class="dashboard_subtitle">(Last updated 09 November 2021, 01:10 pm) </span>
+            </div>
+            <div class="buysell_status">
+                Status <span class="green_status"></span>
+            </div>
+        </div>
+
+        <div class="dashboard_buysell_bxs">
+            <div class="buysell_bx">
+                <div class="bx_title">
+                    Buy Price
+                </div>
+                <div class="prices_details">
+                    <div class="d-flex justify-content-around align-items-center">
+                        <div class="prices_rates_up">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <span>239.54</span><img src="images/icons/arrow_up.svg" alt="">
+                            </div>
+                            <div class="per_gram">
+                                PER GRAM
+                            </div>
+                        </div>
+                        <canvas id="buyprice_chart" class="price_chart"></canvas>
+                        <script>
+                            var chart = document.getElementById('buyprice_chart').getContext('2d'),
+                                gradient = chart.createLinearGradient(0, 0, 0, 450);
+
+                            gradient.addColorStop(0, 'rgba(26, 198,156, .55)');
+                            gradient.addColorStop(0.5, 'rgba(26, 198,156, .015)');
+                            gradient.addColorStop(1, 'rgba(26, 198,156, 0)');
+
+
+                            var data = {
+                                labels: ['9 Oct ', '11 Oct ', '13 Oct ', '14 Oct ', '15 Oct '
+                                ],
+                                datasets: [{
+                                    backgroundColor: gradient,
+                                    pointBackgroundColor:false,
+                                    fill: true,
+                                    tension: 0.4,
+                                    borderWidth: 10,
+                                    borderColor: '#1AC69C',
+                                    data: [20, 40,80, 50,90]
+                                }]
+                            };
+
+
+                            var options = {
+                                responsive: true,
+                                maintainAspectRatio: true,
+                                animation: {
+                                    easing: 'easeInOutQuad',
+                                    duration: 520
+                                },
+                                scales: {
+                                    x: {
+                                        gridLines: {
+                                            color: 'rgba(200, 200, 200, 0.05)',
+                                            lineWidth: 1
+                                        }
+                                    },
+                                    y: {
+                                        gridLines: {
+                                            color: 'rgba(200, 200, 200, 0.08)',
+                                            lineWidth: 1
+                                        }
+                                    }
+                                },
+                                
+                            };
+
+
+                            var chartInstance = new Chart(chart, {
+                                type: 'line',
+                                data: data,
+                                options: {
+                                    plugins: {
+                                        legend: {
+                                            display: false,
+                                        },
+                                    },
+                                    tooltips: {
+                                        enabled: false,
+                                    },
+                                    
+                                    elements: {
+                                        point:{
+                                            radius: 0
+                                        }
+                                    },
+                                    scales: {
+                                        x: {
+                                            display: false,
+                                        },
+                                        y: {
+                                            display: false,
+                                        },
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <a type="button" class="buy_btn" data-bs-toggle="modal" data-bs-target="#buy">Buy Now</a>
+                </div>
+            </div>
+            <div class="buysell_bx">
+                <div class="bx_title">
+                    Sell Price
+                </div>
+                <div class="prices_details">
+                    <div class="d-flex justify-content-around align-items-center">
+                        <div class="prices_rates_down">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <span>239.54</span><img src="images/icons/arrow_down.svg" alt="">
+                            </div>
+                            <div class="per_gram">
+                                PER GRAM
+                            </div>
+                        </div>
+                        <canvas id="sellprice_chart" class="price_chart"></canvas>
+                        <script>
+                            var chart = document.getElementById('sellprice_chart').getContext('2d');
+                            var gradient = chart.createLinearGradient(0, 0, 0, 450);
+
+                            gradient.addColorStop(0, 'rgba(255, 42,29, .55)');
+                            gradient.addColorStop(0.5, 'rgba(255, 42,29, .015)');
+                            gradient.addColorStop(1, 'rgba(255, 42,29, 0)');
+
+
+                            var data = {
+                                labels: ['9 Oct ', '11 Oct ', '13 Oct ', '14 Oct ', '15 Oct '
+                                ],
+                                datasets: [{
+                                    backgroundColor: gradient,
+                                    pointBackgroundColor:false,
+                                    fill: true,
+                                    tension: 0.4,
+                                    borderWidth: 10,
+                                    borderColor: '#FF4848',
+                                    data: [90, 50,80, 40,20]
+                                }]
+                            };
+
+
+                            var options = {
+                                responsive: true,
+                                maintainAspectRatio: true,
+                                // animation: {
+                                //     easing: 'easeInOutQuad',
+                                //     duration: 520
+                                // },
+                                scales: {
+                                    x: {
+                                        grid: {
+                                            color: 'rgba(200, 200, 200, 0.05)',
+                                            lineWidth: 1
+                                        }
+                                    },
+                                    y: {
+                                        grid: {
+                                            color: 'rgba(200, 200, 200, 0.08)',
+                                            lineWidth: 1
+                                        }
+                                    }
+                                },
+                                
+                            };
+
+
+                            var chartInstance = new Chart(chart, {
+                                type: 'line',
+                                data: data,
+                                options: {
+                                    tooltips: {
+                                        enabled: false,
+                                    },
+                                    plugins: {
+                                        legend: {
+                                            display: false,
+                                        },
+                                    },
+                                    
+                                    elements: {
+                                        point:{
+                                            radius: 0
+                                        }
+                                    },
+                                    scales: {
+                                        x: {
+                                            display: false,
+                                        },
+                                        y: {
+                                            display: false,
+                                        },
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <a href="#" class="sell_btn">Sell Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data_row3">
+        <button class="shortclick green_active">
+            <img src="images/icons/bullseye-arrow.svg" alt="">
+            <span>Start New Goal</span>
+        </button>
+        <button class="shortclick">
+            <img src="images/icons/alarm-plus.svg" alt="">
+            <span>Future Buy</span>
+        </button>
+        <button class="shortclick">
+            <img src="images/icons/Union.svg" alt="">
+            <span>Future Sell</span>
+        </button>
+        <button class="shortclick">
+            <img src="images/icons/sync.svg" alt="">
+            <span>Convert</span>
+        </button>
+    </div>
+
+    <div class="data_row4 Desktop">
+        <div class="dashboard_title">
+            News & Tips
+        </div>
+        <div class="news">
+            <a href="">
+                <div class="bcard">
+                    <div class="bcard__header">
+                        <img src="images/demo/image 50.jpg" alt="card__image" class="card__image" width="600">
+                    </div>
+                    <div class="bcard__body">
+                        <span>Watch a short video to get 1 FREE SPIN instantly</span>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="bcard">
+                    <div class="bcard__header">
+                        <img src="images/demo/image 21.jpg" alt="card__image" class="card__image" width="600">
+                    </div>
+                    <div class="bcard__body">
+                        <span>Stand a chance to WIN 1 GRAM of digital gold</span>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="bcard">
+                    <div class="bcard__header">
+                        <img src="images/demo/image 54.jpg" alt="card__image" class="card__image" width="600">
+                    </div>
+                    <div class="bcard__body">
+                        <span>Merry Christmas to all our customers!</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="data_row5">
+        <div class="dashboard_title">
+            Historical Gold Price
+        </div>
+        <div class="price_charts">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div class="pricechart_details">
+                    <span class="pricechart_up"><img src="images/icons/chart-line-up.svg" alt=""> RM244.80</span>
+                    <span class="pricechart_down"><img src="images/icons/chart-line-down.svg" alt=""> RM244.80</span>
+                </div>
+                <div class="pricechart_timeline">
+                    <ul class="pricechart_tabs-list">
+                        <!-- <li class="active"><a href="#tab1">1d</a></li>
+                        <li><a href="#tab2">2w</a></li>
+                        <li><a href="#tab3">1m</a></li>
+                        <li><a href="#tab4">6m</a></li>
+                        <li><a href="#tab5">1y</a></li> -->
+                        <li><button onclick="timeFrame(this)" value="oneweek">7d</button></li>
+                    <li class="active"><button onclick="timeFrame(this)" value="twoweek">2w</button></li>
+                    <li><button onclick="timeFrame(this)" value="onemonth">1m</button></li>
+                    <li><button onclick="timeFrame(this)" value="sixmonth">6m</button></li>
+                    <li><button onclick="timeFrame(this)" value="oneyear">1y</button></li>
+                    </ul>
+                    <button class="export"><img src="images/icons/inbox-in.svg" alt=""></button>
+                </div>
+            </div>
+            <div>
+                <canvas id="myChart"></canvas>
+              </div>
+            <div class="pricechart_tabs">
+                <div id="tab1" class="pricechart_tab">
+                    <!-- <canvas id="chart"></canvas> -->
+                    <!-- <script>
+                        var chart = document.getElementById('chart').getContext('2d'),
+                            gradient = chart.createLinearGradient(0, 0, 0, 450);
+
+                        gradient.addColorStop(0, '#FED777');
+                        gradient.addColorStop(0.5, 'rgba(254, 215,119, .75)');
+                        gradient.addColorStop(1, 'rgba(255, 250,244, 0.5)');
+
+
+                        var data = {
+                            labels: ['9 Oct ', '11 Oct ', '13 Oct ', '14 Oct ', '15 Oct ', '17 Oct', '19 Oct',
+                                '21 Oct', '23 Oct'
+                            ],
+                            datasets: [{
+                                label: 'Prices',
+                                backgroundColor: gradient,
+                                pointBackgroundColor: 'white',
+                                borderWidth: 3,
+                                borderColor: '#FEC949',
+                                data: [236.00, 238.00, 290.00, 240.00, 244.00, 244.00, 218.00, 250.00,
+                                    240.00
+                                ]
+                            }]
+                        };
+
+
+                        var options = {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            animation: {
+                                easing: 'easeInOutQuad',
+                                duration: 520
+                            },
+                            scales: {
+                                xAxes: [{
+                                    gridLines: {
+                                        color: 'rgba(200, 200, 200, 0.05)',
+                                        lineWidth: 1
+                                    }
+                                }],
+                                yAxes: [{
+                                    gridLines: {
+                                        color: 'rgba(200, 200, 200, 0.08)',
+                                        lineWidth: 1
+                                    }
+                                }]
+                            },
+                            elements: {
+                                line: {
+                                    tension: 0.4
+                                }
+                            },
+                            legend: {
+                                display: false
+                            },
+                            point: {
+                                backgroundColor: 'white'
+                            },
+                            tooltips: {
+                                backgroundColor: '#0DB14B',
+                                titleFontColor: '#fff',
+                                caretSize: 5,
+                                cornerRadius: 15,
+                                xPadding: 15,
+                                yPadding: 15
+                            }
+                        };
+
+
+                        var chartInstance = new Chart(chart, {
+                            type: 'line',
+                            data: data,
+                            options: options
+                        });
+                    </script> -->
+                </div>
+                <div id="tab2" class="pricechart_tab">
+                    chart2
+                </div>
+                <div id="tab3" class="pricechart_tab">
+                    chart3
+                </div>
+                <div id="tab4" class="pricechart_tab">
+                    chart4
+                </div>
+                <div id="tab5" class="pricechart_tab">
+                    chart5
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer_include"></div>
+
+
+
+<!-- buy-modal -->
+<div class="modal fade" id="buy" tabindex="-1" aria-labelledby="buy" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal_title">
+                Buy Gold
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                <div class="modal_prices">
+                    <div class="current_prices">
+                        CURRENT GOLD PRICE &nbsp;
+                        <span>RM244.46/g</span>
+                    </div>
+                    <a class="prices_notice notice_tooltips">
+                        <i class="fal fa-info-circle"></i>
+                        <div class="bottom">
+                            <div class="tooltips_title">Rates update automatically</div>
+                            <div>
+                                The price shown is based on the latest market rate, and will fluctuate accordingly</div>
+                            <i></i>
+                        </div>
+                    </a>
+                </div>
+                <form action="">
+                    <div class="modal_butinput">
+                        Enter Amount <span style="color:#57C4CC">*Min RM5</span>
+                        <div class="modal_prices_input">
+                            <span>RM</span><input type="text" name="currency-field" id="currency-field"
+                                pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="0.00">
+                        </div>
+                        <div class="modal_pricegram">
+                            0.000 <span>g</span>
+                        </div>
+                    </div>
+
+                    <div class="modal_payment">
+                        <select id="modal_payment_method">
+
+                            <option value="1" data-imagesrc="images/payment/gopayz.jpg" data-description="Pay directly from your GoPayz E-wallet.
+                                Processing fee: RM 0.00">GoPayz E-wallet Account</option>
+                            <option value="2" data-imagesrc="images/payment/fpx.jpg"
+                                data-description="Processing fee: RM 1.20">Online Banking</option>
+                        </select>
+                    </div>
+                    <div class="modal_total_g">
+                        <div>Gold Purchased:</div>
+                        <div>RM<span class="total_g_price">0.00</span></div>
+                    </div>
+
+                    <div class="modal_agree">
+                        <div>
+                            <input id="switch" type="checkbox" hidden />
+                            <label for="switch" class="switch"></label>
+                        </div>
+                        <div>
+                            I agree to the <a href="">Terms and Conditions</a>.
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal_buy_btn">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- confirm_process -modal -->
+<div class="modal fade" id="confirm_process" tabindex="-1" aria-labelledby="confirm_process" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal_title">
+                Confirm Payment
+            </div>
+
+            <div class="modal-body">
+                Amount to be paid <strong>RM 201.20</strong><br>
+                Including FPX services charge <strong>RM1.20</strong>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal_back_btn">Back</a>
+                <a href="#" class="modal_process_btn">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- e-AQAD -modal -->
+<div class="modal fade" id="e-aqad" tabindex="-1" aria-labelledby="e-aqad" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal_title">
+                e-AQAD Customer Buy
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                <div class="aqad_info">
+                    <div>Date</div>
+                    <span>Thu, 23 Dec 2021, 12:46:16</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Name</div>
+                    <span>John Doe</span>
+                </div>
+                <div class="aqad_info">
+                    <div>NRIC</div>
+                    <span>891010-10-8989</span>
+                </div>
+                <div class="aqad_info">
+                    <div>GoGold Acc. No</div>
+                    <span>EG72EC7BE1</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Gold Purchase</div>
+                    <span>0.806 gram</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Purchase Price</div>
+                    <span>RM200 / gram</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Fees</div>
+                    <span>RM1.20</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Total Buy</div>
+                    <span>RM201.20</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Purity</div>
+                    <span>999.9 (LBMA Standard)</span>
+                </div>
+                <div class="aqad_info">
+                    <div>Vault</div>
+                    <span>SG4S, Malaysia (Appointed Security Provider)</span>
+                </div>
+
+                <div class="aqad_title">
+                    Final Total
+                </div>
+                <div class="aqad_total">
+                    RM201.20
+                </div>
+                <div class="aqad_notice">
+                    Please complete payment within the next 3 minutes
+                </div>
+
+                <div class="aqad_countdown">
+                    <span>The rates offered will expire in</span>
+                    <span class="countdown"></span>
+                </div>
+
+                <div class="aqad_title">
+                    Campaign Code
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="pass">(Optional)</label>
+                    <input name="code" type="text" value="">
+                </div>
+                <span class="aqad_input_alert">Please ensure NRIC is accurate to be eligible for the campaign.</span>
+                <div class="aqad_title">
+                    Security Pin
+                </div>
+                <div class="d-flex justify-content-center">
+                    <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false"
+                        autocomplete="off">
+                        <input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
+                        <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+                        <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+                        <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+                        <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+                        <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal_process_btn">Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- pin input field -->
+<script>
+    $('.digit-group').find('input').each(function () {
+        $(this).attr('maxlength', 1);
+        $(this).on('keyup', function (e) {
+            var parent = $($(this).parent());
+
+            if (e.keyCode === 8 || e.keyCode === 37) {
+                var prev = parent.find('input#' + $(this).data('previous'));
+
+                if (prev.length) {
+                    $(prev).select();
+                }
+            } else if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (
+                    e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+                var next = parent.find('input#' + $(this).data('next'));
+
+                if (next.length) {
+                    $(next).select();
+                } else {
+                    if (parent.data('autosubmit')) {
+                        parent.submit();
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<!-- 3mins countdown -->
+<script>
+    var timer2 = "3:00";
+    var interval = setInterval(function () {
+
+
+        var timer = timer2.split(':');
+        //by parsing integer, I avoid all extra string processing
+        var minutes = parseInt(timer[0], 10);
+        var seconds = parseInt(timer[1], 10);
+        --seconds;
+        minutes = (seconds < 0) ? --minutes : minutes;
+        if (minutes < 0) clearInterval(interval);
+        seconds = (seconds < 0) ? 59 : seconds;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+        //minutes = (minutes < 10) ?  minutes : minutes;
+        $('.countdown').html(minutes + ':' + seconds);
+        timer2 = minutes + ':' + seconds;
+    }, 1000);
+</script>
+<!-- pricechart - tab -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.pricechart_tab:first-child').css('display', 'block');
+
+        $(".pricechart_tabs-list li").click(function () {
+            var tabid = $(this).find("a").attr("href");
+            $(".pricechart_tabs-list li,.pricechart_tabs div.pricechart_tab").removeClass(
+                "active"); // removing active class from tab
+
+            $(".pricechart_tab").hide(); // hiding open tab
+            $(tabid).show(); // show tab
+            $(this).addClass("active"); //  adding active class to clicked tab
+
+        });
+
+    });
+</script>
+
+<script>
+    const oneweek = [
+        { x: Date.parse('2022-10-01'), y: 0},
+        { x: Date.parse('2022-10-02'), y: 236},
+        { x: Date.parse('2022-10-03'), y: 238},
+        { x: Date.parse('2022-10-04'), y: 240},
+        { x: Date.parse('2022-10-04'), y: 240},
+        { x: Date.parse('2022-10-05'), y: 245},
+        { x: Date.parse('2022-10-06'), y: 228},
+        { x: Date.parse('2022-10-07'), y: 236}
+    ];
+
+    const twoweek = [
+        { x: Date.parse('2022-10-09'), y: 236},
+        { x: Date.parse('2022-10-11'), y: 236},
+        { x: Date.parse('2022-10-13'), y: 238},
+        { x: Date.parse('2022-10-14'), y: 240},
+        { x: Date.parse('2022-10-15'), y: 242},
+        { x: Date.parse('2022-10-17'), y: 243},
+        { x: Date.parse('2022-10-21'), y: 237},
+        { x: Date.parse('2022-10-23'), y: 244},
+        // { x: Date.parse('2022-10-25'), y: 242},
+        // { x: Date.parse('2022-10-27'), y: 236},
+        // { x: Date.parse('2022-11-01'), y: 242},
+        // { x: Date.parse('2022-11-03'), y: 241}
+    ]
+   res = Math.max.apply(Math, twoweek.map(function(o) { return o.y; }))
+   res1 = Math.min.apply(Math, twoweek.map(function(o) { return o.y; }))
+
+    const onemonth = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 1000},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+
+    const sixmonth = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 1000},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+    const oneyear = [
+        { x: Date.parse('2021-06-01'), y: 500},
+        { x: Date.parse('2021-07-01'), y: 700},
+        { x: Date.parse('2021-08-01'), y: 1000},
+        { x: Date.parse('2021-09-01'), y: 500},
+        { x: Date.parse('2021-10-01'), y: 300},
+        { x: Date.parse('2021-11-01'), y: 200},
+        { x: Date.parse('2021-12-01'), y: 400}
+    ]
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+    
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var gradientBg = ctx.createLinearGradient(0, 0, 0, 450);
+
+    gradientBg.addColorStop(0, '#FED777');
+    gradientBg.addColorStop(0.5, 'rgba(254, 215,119, .75)');
+    gradientBg.addColorStop(1, 'rgba(255, 250,244, 0.5)');
+    // const gradientBg = ctx.createLinearGradient(0, 0, 0, 400);
+    // gradientBg.addColorStop(0, '#FED777');
+    // gradientBg.addColorStop(1, 'rgba(255, 250, 244, 0)');
+    var data = {
+    //   labels: labels,
+      datasets: [{
+        label: 'Prices',
+        // backgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor: gradientBg,
+        borderColor: '#FED777',
+        data: twoweek,
+        tension: 0.3,
+        fill: true,
+        pointHoverBorderColor: '#4FE37E',
+        pointHoverBackgroundColor: '#4FE37E',
+        // pointBorderWidth:3,
+        pointHoverBorderWidth: 3,
+        pointRadius: 3,
+        pointBackgroundColor: "#ffff00",
+        pointHoverRadius: 3
+      }]
+    };
+   
+    //tooltipLine Block
+    var tooltipLine = {
+        id: 'tooltipLine',
+        afterDraw: chart => {
+            if(chart.tooltip._active && chart.tooltip._active.length){
+                var ctx = chart.ctx;
+                ctx.save();
+                var activePoint = chart.tooltip._active[0];
+
+                ctx.beginPath();
+                ctx.setLineDash([5, 7]);
+                ctx.moveTo(activePoint.element.x, activePoint.element.y);
+                ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#57C4CC';
+                ctx.stroke();
+                ctx.restore();
+            }
+
+        }
+    }
+    var config = {
+        type: 'line',
+        data: data,
+        options: {
+            locale: 'en-US',
+            scales:{
+                x: {
+                    offset: true,
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: {
+                            day: 'dd MMM'
+                        }
+                    },
+                    grid: {
+                        // display: false,
+                        display: true,
+                        drawOnChartArea: false,
+                        tickColor: '#999',
+                        position: 'right'
+                    },
+                    ticks: {
+                        color: "#9A9A9A",
+                    },
+                },
+
+                y: {
+                    offset: true,
+                    grace: '5%',
+                    // beginAtZero: true,
+                    // maxTicksLimit: 5,
+                    // min: 236,
+                    grid: {
+                        display: false,
+                        drawBorder: false,
+                    },
+                    ticks: {
+                        callback: function(label, index, labels) {
+                            return label + ".00";
+                        },
+                        color: "#9A9A9A",
+                    },
+                }   
+
+            },
+            plugins: {
+                autocolors: false,
+                annotation: {
+                    annotations: {
+                        line1: {
+                            type: 'line',
+                            yMin: res1,
+                            yMax: res1,
+                            borderColor: '#999',
+                            borderWidth: 2,
+                            borderDash: [2,2],
+                        },
+                        line2: {
+                            type: 'line',
+                            yMin: res,
+                            yMax: res,
+                            borderColor: '#999',
+                            borderWidth: 2,
+                            borderDash: [2,2],
+
+                        }
+                    }
+                },
+                legend: {
+                    display:false
+                },
+                tooltip: {
+                    callbacks: {
+                        
+                        title: ()=>{},
+                        label: (context)=>{ 
+                            values = (Math.round(context.formattedValue * 100) / 100).toFixed(2);
+                            return "RM "+values
+                        }
+                    },
+                    displayColors: false,
+                    caretSize: 0,
+                    caretPadding: 10,
+                    backgroundColor: '#0DB14B',	
+                    titleFontColor: '#fff',	
+                    // caretSize: 5,	
+                    cornerRadius: 15,	
+                    xPadding: 15,	
+                    yPadding: 15
+                },
+                
+            },
+            
+        },
+        plugins: [tooltipLine]
+    };
+</script>
+<script>
+var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
+
+function timeFrame(period){
+    if(period.value == 'oneweek'){
+        myChart.config.options.scales.x.time.unit = 'day';
+        myChart.config.data.datasets[0].data = oneweek;
+        
+        maxValue = Math.max.apply(Math, oneweek.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, oneweek.map(function(o) { return o.y; }))
+        
+    }
+    if(period.value == 'twoweek'){
+        myChart.config.options.scales.x.time.unit = 'day';
+        myChart.config.data.datasets[0].data = twoweek;
+        maxValue = Math.max.apply(Math, twoweek.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, twoweek.map(function(o) { return o.y; }))
+    }
+    if(period.value == 'onemonth'){
+        myChart.config.options.scales.x.time.unit = 'week';
+        myChart.config.data.datasets[0].data = onemonth;
+        maxValue = Math.max.apply(Math, onemonth.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, onemonth.map(function(o) { return o.y; }))
+    }
+    if(period.value == 'sixmonth'){
+        myChart.config.options.scales.x.time.unit = 'month';
+        myChart.config.data.datasets[0].data = sixmonth;
+        maxValue = Math.max.apply(Math, sixmonth.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, sixmonth.map(function(o) { return o.y; }))
+    }
+    if(period.value == 'oneyear'){
+        myChart.config.options.scales.x.time.unit = 'year';
+        myChart.config.data.datasets[0].data = oneyear;
+        maxValue = Math.max.apply(Math, oneyear.map(function(o) { return o.y; }))
+        minValue = Math.min.apply(Math, oneyear.map(function(o) { return o.y; }))
+    }
+    myChart.config.options.plugins.annotation.annotations.line1.yMin = minValue;
+    myChart.config.options.plugins.annotation.annotations.line1.yMax = minValue;
+    myChart.config.options.plugins.annotation.annotations.line2.yMin = maxValue;
+    myChart.config.options.plugins.annotation.annotations.line2.yMax = maxValue;
+    myChart.update();
+}
+</script>
+
+<!-- Modal- Prices' input field  -->
+<script>
+    $("input[data-type='currency']").on({
+        keyup: function () {
+            formatCurrency($(this));
+        },
+        blur: function () {
+            formatCurrency($(this), "blur");
+        }
+    });
+
+    function formatNumber(n) {
+        return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+
+    function formatCurrency(input, blur) {
+        var input_val = input.val();
+        if (input_val === "") {
+            return;
+        }
+        var original_len = input_val.length;
+        var caret_pos = input.prop("selectionStart");
+
+        if (input_val.indexOf(".") >= 0) {
+            var decimal_pos = input_val.indexOf(".");
+
+            var left_side = input_val.substring(0, decimal_pos);
+            var right_side = input_val.substring(decimal_pos);
+
+            left_side = formatNumber(left_side);
+
+            right_side = formatNumber(right_side);
+
+            if (blur === "blur") {
+                right_side += "00";
+            }
+
+            right_side = right_side.substring(0, 2);
+
+            input_val = left_side + "." + right_side;
+
+        } else {
+
+            input_val = formatNumber(input_val);
+            input_val = input_val;
+
+            if (blur === "blur") {
+                input_val += ".00";
+            }
+        }
+
+        input.val(input_val);
+
+        var updated_len = input_val.length;
+        caret_pos = updated_len - original_len + caret_pos;
+        input[0].setSelectionRange(caret_pos, caret_pos);
+    }
+</script>
+
+
+<!-- select option - image and text -->
+
+<script>
+    $('#modal_payment_method').ddslick();
+</script>
+
+<!-- Mobile -  Overview -->
+
+<script>
+    $(".overview_mobile_dropdown .click").click(function(){
+  $(".overview_mobile_dropdown").toggleClass("active");
+});
+</script>

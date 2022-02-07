@@ -1,0 +1,248 @@
+<div class="register_main">
+    <form action="#" class="regform" method="get">
+        <!-- Progressbar -->
+        <ul id="register_progressbar">
+            <li id="active1">
+                <div id="bar1"></div>Personal Info
+            </li>
+            <li id="active2">
+                <div id="bar2"></div>Bank Acc Info
+            </li>
+            <li id="active3">
+                <div id="bar3"></div>Security
+            </li>
+            <li id="active4">
+                <div id="bar4"></div>Complete
+            </li>
+        </ul>
+        <!-- Fieldsets -->
+        <fieldset id="first">
+            <div class="register_title">
+                Create Go Gold Account
+            </div>
+            <div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="fullname">FULL NAME (AS PER NRIC)</label>
+                    <input name="fullname" type="text" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="email">Email</label>
+                    <input name="email" type="text" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="NRIC">NRIC</label>
+                    <input name="NRIC" type="number" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="mobile">MOBILE</label>
+                    <input name="mobile" type="number" value="">
+                </div>
+                <div class="text_field">
+                    <label class="form_titlelabel" for="address">Address</label>
+                    <input name="address" type="text" value="">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text_field30">
+                    <label class="form_titlelabel" for="city">CITY</label>
+                    <input name="city" type="text" value="">
+                </div>
+                <div class="text_field30">
+                    <label class="form_titlelabel" for="postcode">POSTCODE</label>
+                    <input name="postcode" type="text" value="">
+                </div>
+                <div class="text_field30">
+                    <label class="selecttion_label" for="state">STATE</label>
+                    <div>
+                        <select name="" id="register_selection">
+                            <option value="1">State 1</option>
+                            <option value="2">State 2</option>
+                            <option value="3">State 3</option>
+                            <option value="4">State 4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="register_agree">
+                <div>
+                    <input id="switch" type="checkbox" hidden />
+                    <label for="switch" class="switch"></label>
+                </div>
+                <div>
+                    I agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.
+                </div>
+            </div>
+            <input id="next_btn1" onclick="next_step1()" type="button" value="Next">
+            <div class="register_login">
+                Already have an account? <a href="#">Login here</a>
+            </div>
+        </fieldset>
+        <fieldset id="second">
+            <div class="register_title">
+                Create Go Gold Account
+            </div>
+            <div class="text_field">
+                <label class="selecttion_label2" for="bankname">BANK NAME</label>
+                <div>
+                    <select name="" id="register_selection2">
+                        <option value="1">Bank 1</option>
+                        <option value="2">Bank 2</option>
+                        <option value="3">Bank 3</option>
+                        <option value="4">Bank 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="bankno">BANK ACCOUNT NUMBER</label>
+                <input name="bankno" type="number" value="">
+            </div>
+            <div class="text_field">
+                <label class="selecttion_label2" for="categories">OCCUPATION CATEGORY</label>
+                <div>
+                    <select name="" id="register_selection3">
+                        <option value="1">category 1</option>
+                        <option value="2">category 2</option>
+                        <option value="3">category 3</option>
+                        <option value="4">category 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="code">CAMPAIGN CODE (OPTIONAL)</label>
+                <input name="code" type="number" value="">
+            </div>
+           
+            <input id="pre_btn1" onclick="prev_step1()" type="button" value="Back">
+            <input id="next_btn2" name="next" onclick="next_step2()" type="button" value="Next">
+        </fieldset>
+        <fieldset id="third">
+            <div class="register_title">
+                Create Go Gold Account
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="pass">ENTER PASSWORD</label>
+                <input name="pass" type="password" value="">
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="pass">CONFIRM PASSWORD</label>
+                <input name="pass" type="password" value="">
+            </div>
+            <input id="pre_btn1" onclick="prev_step2()" type="button" value="Back">
+            <input id="next_btn2" name="next" onclick="next_step3()" type="button" value="Next">
+        </fieldset>
+        <fieldset id="forth">
+            <div class="register_title">
+                Login
+            </div>
+            <div class="registed_alert">
+                You have been registered successfully. Please login to continue.
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="email">EMAIL</label>
+                <input name="email" type="text" value="">
+            </div>
+            <div class="text_field">
+                <label class="form_titlelabel" for="pass">PASSWORD</label>
+                <input name="pass" type="password" value="">
+            </div>
+            <input class="submit_btn" onclick="validation(event)" type="submit" value="Next">
+        </fieldset>
+    </form>
+</div>
+<div id="footer_include"></div>
+
+
+<script>
+    /*------------Validation Function-----------------*/
+    var count = 0; // To count blank fields.
+    function validation(event) {
+        var radio_check = document.getElementsByName('gender'); // Fetching radio button by name.
+        var input_field = document.getElementsByClassName(
+            'text_field'); // Fetching all inputs with same class name text_field and an html tag textarea.
+        var text_area = document.getElementsByTagName('textarea');
+        // Validating radio button.
+        if (radio_check[0].checked == false && radio_check[1].checked == false) {
+            var y = 0;
+        } else {
+            var y = 1;
+        }
+        // For loop to count blank inputs.
+        for (var i = input_field.length; i > count; i--) {
+            if (input_field[i - 1].value == '' || text_area.value == '') {
+                count = count + 1;
+            } else {
+                count = 0;
+            }
+        }
+        if (count != 0 || y == 0) {
+            alert("*All Fields are mandatory*"); // Notifying validation
+            event.preventDefault();
+        } else {
+            return true;
+        }
+    }
+    /*---------------------------------------------------------*/
+    // Function that executes on click of first next button.
+    function next_step1() {
+        document.getElementById("first").style.display = "none";
+        document.getElementById("second").style.display = "block";
+        document.getElementById("active2").style.color = "#555555";
+        document.getElementById("active2").style.fontWeight = "bold";
+        document.getElementById("bar2").style.background = "#FEC949";
+    }
+    // Function that executes on click of first previous button.
+    function prev_step1() {
+        document.getElementById("first").style.display = "block";
+        document.getElementById("second").style.display = "none";
+        document.getElementById("active1").style.color = "#555555";
+        document.getElementById("active1").style.fontWeight = "bold";
+        document.getElementById("active2").style.color = "#999999";
+        document.getElementById("bar2").style.background = "#D3D3D3";
+    }
+    // Function that executes on click of second next button.
+    function next_step2() {
+        document.getElementById("second").style.display = "none";
+        document.getElementById("third").style.display = "block";
+        document.getElementById("active3").style.color = "#555555";
+        document.getElementById("active3").style.fontWeight = "bold";
+        document.getElementById("bar3").style.background = "#FEC949";
+    }
+    // Function that executes on click of second previous button.
+    function prev_step2() {
+        document.getElementById("third").style.display = "none";
+        document.getElementById("second").style.display = "block";
+        document.getElementById("active2").style.color = "#555555";
+        document.getElementById("active2").style.fontWeight = "bold";
+        document.getElementById("active3").style.color = "#999999";
+        document.getElementById("bar2").style.background = "#FEC949";
+        document.getElementById("bar3").style.background = "#D3D3D3";
+    }
+
+    // Function that executes on click of second next button.
+    function next_step3() {
+        document.getElementById("third").style.display = "none";
+        document.getElementById("forth").style.display = "block";
+        document.getElementById("active4").style.color = "#555555";
+        document.getElementById("active4").style.fontWeight = "bold";
+        document.getElementById("bar4").style.background = "#FEC949";
+    }
+    // Function that executes on click of second previous button.
+    function prev_step3() {
+        document.getElementById("forth").style.display = "none";
+        document.getElementById("third").style.display = "block";
+        document.getElementById("active3").style.color = "#555555";
+        document.getElementById("active3").style.fontWeight = "bold";
+        document.getElementById("active4").style.color = "#999999";
+        document.getElementById("bar3").style.background = "#FEC949";
+        document.getElementById("bar4").style.background = "#D3D3D3";
+    }
+</script>
+
+<!-- select option - register -->
+
+<script>
+    $("#register_selection").ddslick();
+    $("#register_selection2").ddslick();
+    $("#register_selection3").ddslick();
+
+</script>
