@@ -1650,8 +1650,39 @@ label.selecttion_label {
     font-weight: bold;
 }
 
+/* convert gold modal */
+.convert-modal{
+    background-color: #F5F5F7 !important;
+}
+.gold_balance_title{
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D3D3D3;
+    color: #555;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+.gold_balance_total{
+    font-weight: bold;
+}
+.gold_balance_total_amt{
+    font-size: 12px;
+}
+.gold_balance_gram{
+    font-size: 10px;
+    margin-top: 200px;
+}
 
-
+.gold_balance button{
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+.gold_quantity{
+    
+}
 /* responsive */
 @media screen and (min-width:1530px) {
     #main.toggle_width #main_include {
@@ -1863,7 +1894,7 @@ label.selecttion_label {
 
       .news a {
         width: 100%;
- margin-bottom:10px;
+        margin-bottom:10px;
       }
 
       .reward_content_title {
@@ -2067,5 +2098,9 @@ label.selecttion_label {
       }
       .pricechart_timeline button img, .pricechart_details span img {
         width: 14px;
+      }
+      .convert-modal{
+        background-color: #F5F5F7 !important;
+
       }
 }

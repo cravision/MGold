@@ -1,6 +1,7 @@
 <div class="container">
     <button data-bs-toggle="modal" data-bs-target="#confirm_process">confirm process</button>
     <button data-bs-toggle="modal" data-bs-target="#e-aqad">E-AQAD</button>
+    <button data-bs-toggle="modal" data-bs-target="#convert_gold">Convert Gold</button>
     <!-- before login -->
 
     <div class="data_row">
@@ -672,6 +673,150 @@
             <div class="modal-footer">
                 <a href="#" class="modal_process_btn">Next</a>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- convert gold -modal -->
+<div class="modal fade" id="convert_gold" tabindex="-1" aria-labelledby="convert_gold" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content convert-modal">
+            <div class="modal_title">
+                CONVERT GOLD
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                
+                <div class="data_row">
+                    <div class="gold_balance_title d-flex">
+                        <div>Gold Balance</div>
+                        <div class="gold_balance_total">
+                            
+                            <span class="gold_balance_total_amt">11.099</span>
+                            <div class="w-100"></div>
+                            <span class="gold_balance_gram">GRAM</span>
+                        </div>
+                    </div>
+                    <div class="gold_balance">
+                        <div class="row my-1">
+                            <div class="col-lg-4 col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>0.5</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>1</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>2.5</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-lg-4 col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>5</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>10</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>50</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>100</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>1</span><br>
+                                        <span>Dinar</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>5</span><br>
+                                        <span>Dinar</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <br>
+                <div class="data_row">
+                    <div class="gold_quantity">
+                        <label for="" class="">Quantity</label>
+                        <div>
+                            <input type="number">
+                        </div>
+                        
+                    </div>
+                    <div class="gold_balance_title d-flex">
+                        <div>Gold Balance</div>
+                        <div class="gold_balance_total">
+                            
+                            <span class="gold_balance_total_amt">11.099</span>
+                            <div class="w-100"></div>
+                            <span class="gold_balance_gram">GRAM</span>
+                        </div>
+                    </div>
+                    <div class="gold_balance_title d-flex">
+                        <div>Gold Balance</div>
+                        <div class="gold_balance_total">
+                            
+                            <span class="gold_balance_total_amt">11.099</span>
+                            <div class="w-100"></div>
+                            <span class="gold_balance_gram">GRAM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal_agree">
+                        <div>
+                            <input id="switch" type="checkbox" hidden />
+                            <label for="switch" class="switch"></label>
+                        </div>
+                        <div>
+                            I agree to the <a href="">Terms and Conditions</a>.
+                        </div>
+                    </div>
+                </div>
+
         </div>
     </div>
 </div>
