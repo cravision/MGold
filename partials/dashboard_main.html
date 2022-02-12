@@ -1,6 +1,8 @@
 <div class="container">
     <button data-bs-toggle="modal" data-bs-target="#confirm_process">confirm process</button>
     <button data-bs-toggle="modal" data-bs-target="#e-aqad">E-AQAD</button>
+    <button data-bs-toggle="modal" data-bs-target="#convert_gold">Convert Gold</button>
+    <button data-bs-toggle="modal" data-bs-target="#price_alert">Price Alert</button>
     <!-- before login -->
 
     <div class="data_row">
@@ -676,6 +678,311 @@
     </div>
 </div>
 
+<!-- convert gold -modal -->
+<div class="modal fade" id="convert_gold" tabindex="-1" aria-labelledby="convert_gold" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 1000px !important; ">
+        <div class="modal-content convert-modal">
+            <div class="modal_title">
+                CONVERT GOLD
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                <div class="data_row">
+                    <div class="gold_balance_title d-flex">
+                        <div>Gold Balance</div>
+                        <div class="gold_balance_total">
+                            <div class="d-block">11.099</div>
+                            <span>GRAM</span>
+                        </div>
+                    </div>
+                    <div class="gold_balance mt-4">
+                        <div class="row my-1">
+                            <div class="col-lg-4 col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>0.5</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>1</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>2.5</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-lg-4 col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>5</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>10</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>50</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>100</span><br>
+                                        <span>Gram</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>1</span><br>
+                                        <span>Dinar</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-4  col-sm-12">
+                                <button type="button" class="btn btn-outline-dark btn-group">
+                                    <div class="flex-wrap">
+                                        <span>5</span><br>
+                                        <span>Dinar</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <br>
+                <div class="data_row">
+                    <div class="gold_quantity">
+                        <label class="gold_quantity_title">Quantity</label>
+                        <div>
+                            <button type="button" class="btn btn-default btn-circle" onclick="addQuantity()"><i class="fas fa-plus"></i></button>
+                            <input type="number" value="1" class="gold_quantity_amount">
+                            <button type="button" class="btn btn-default btn-circle" onclick="minusQuantity()"><i class="fas fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <div class="conversion_title d-flex">
+                        <div class="conversion_info">
+                            <div class="d-block">Total Conversion</div>
+                            <span>GRAM</span>
+                        </div>
+                        <div class="conversion_bal">1.00</div>
+                    </div>
+                    <div class="conversion_title d-flex">
+                        <div class="conversion_info">
+                            <div class="d-block">Balance after Conversion</div>
+                            <span>GRAM</span>
+                        </div>
+                        <div class="conversion_bal">10.099</div>
+                    </div>
+                    
+                    <div class="modal_agree">
+                        <div>
+                            <input id="switch-convert-gold" type="checkbox" hidden />
+                            <label for="switch-convert-gold" class="switch"></label>
+                        </div>
+                        <div>
+                            I agree to the <a href="">Terms and Conditions</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- price alert -modal -->
+<div class="modal fade" id="price_alert" tabindex="-1" aria-labelledby="price_alert" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 1000px !important; ">
+        <div class="modal-content convert-modal">
+            <div class="modal_title">
+                PRICE ALERT
+            </div>
+            <a data-bs-dismiss="modal" class="modal_close"><i class="fal fa-times"></i></a>
+            <div class="modal-body">
+                <div class="data_row">
+                    <div class="price_alert_title">
+                        <div class="d-block">Set Your Price Alert</div>
+                        <span>You will receive notification when gold price reaches your targeted price.</span>
+                    </div>
+                    <div class="price_alert_des d-flex col-12">
+                        <div class="price_alert_name col-6">
+                            <div class="d-block">Customer Buy</div>
+                            <span>RM PER GRAM</span>
+                        </div>
+                        <div class="set_target col-6">
+                            <input type="text" name="currency-field" id="currency-field"
+                            pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" class="set_buy_target d-block" placeholder="Insert Buy Price">
+                            <button class="mt-1" onclick="setBuyTarget()">Set Buy Target</button>
+                        </div>
+                        
+                    </div>
+                    <div class="price_alert_des d-flex col-12">
+                        <div class="price_alert_name col-6">
+                            <div class="d-block">Customer Sell</div>
+                            <span>RM PER GRAM</span>
+                        </div>
+                        <div class="set_target col-6">
+                            <input type="text" name="currency-field" id="currency-field"
+                            pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" class="set_sell_target d-block" placeholder="Insert Sell Price">
+                            <button class="mt-1" onclick="setSellTarget()">Set Sell Target</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <br>
+                <div class="data_row">
+                    <div class="pricealert_tabs">
+                        <ul class="nav nav-tabs col-12 pricealert_tabs-list" role="tablist">
+                            <li class="nav-item col-6">
+                                <a class="active nav-link price_alert_tabs" data-toggle="tab" href="#active" role="tab" aria-labelledby="active" aria-controls="active" aria-selected="true">Active</a>
+                            </li>
+                            <li class="nav-item col-6">
+                                <a class="nav-link price_alert_tabs"  data-toggle="tab" href="#triggered" role="tab" aria-labelledby="triggered" aria-controls="triggered" aria-selected="false">Triggered</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="pricealert_tab" id="active" aria-labelledby="active-tab">
+                                <div class="price_alert_data d-flex">
+                                    <div class="price_alert_sell">
+                                        <span class="d-flex">SELL</span>
+                                    </div>
+                                    <div class="price_alert_info">
+                                        <div class="d-block">Target: RM 243.00</div>
+                                        <span>08 Dec 2021 01:49 PM</span>
+                                    </div>
+                                    <div class="price_alert_delete">
+                                        <a href="#" class="deletePrice"><i class='fas fa-times-circle'></i></a>
+                                    </div>
+                                </div>
+                                <div class="price_alert_data d-flex">
+                                    <div class="price_alert_buy">
+                                        <span class="d-flex">BUY</span>
+                                    </div>
+                                    <div class="price_alert_info">
+                                        <div class="d-block">Target: RM 241.00</div>
+                                        <span>08 Dec 2021 01:49 PM</span>
+                                    </div>
+                                    <div class="price_alert_delete">
+                                        <a href="#" class="deletePrice"><i class='fas fa-times-circle'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pricealert_tab" id="triggered" aria-labelledby="triggered-tab">
+                                <div class="price_alert_data d-flex">
+                                    <div class="price_alert_buy">
+                                        <span class="d-flex">BUY</span>
+                                    </div>
+                                    <div class="price_alert_info">
+                                        <div class="d-block">Target: RM 243.00</div>
+                                        <span>08 Dec 2021 01:49 PM</span>
+                                    </div>
+                                    <div class="price_alert_delete">
+                                        <a href="#" class="deletePrice"><i class='fas fa-times-circle'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- gold quantity input number field -->
+<script>
+    const addQuantity = () =>{
+        var value = parseInt($('.gold_quantity_amount').val());
+        value = isNaN(value) ? 0 : value;
+        value++;
+        $('.gold_quantity_amount').val(value)
+    }
+
+    const minusQuantity = () =>{
+        var value = parseInt($('.gold_quantity_amount').val());
+        value = isNaN(value) ? 0 : value;
+        value--;
+        $('.gold_quantity_amount').val(value)
+    }
+</script>
+
+<!-- set price target -->
+<script>
+    const setBuyTarget = () => {
+        var value = $('.set_buy_target').val();
+
+        var price_data = '<div class="price_alert_data d-flex">' +
+                            '<div class="price_alert_buy">' +
+                                '<span class="d-flex">BUY</span>' +
+                            '</div>' +
+                           '<div class="price_alert_info">' +
+                                '<div class="d-block">Target: RM' + value + '</div>' +
+                                '<span>08 Dec 2021 01:49 PM</span>' +
+                            '</div>' +
+                            '<div class="price_alert_delete">' +
+                                '<a href="#" class="deletePrice"><i class="fas fa-times-circle"></i></a>' +
+                            '</div>' +
+                        '</div>';
+
+        var tab = $('a.active').attr('aria-labelledby');
+        $('#' + tab).append(price_data);
+    }
+
+    const setSellTarget = () => {
+        var value = $('.set_sell_target').val();
+
+        var price_data = '<div class="price_alert_data d-flex">' +
+                            '<div class="price_alert_sell">' +
+                                '<span class="d-flex">SELL</span>' +
+                            '</div>' +
+                           '<div class="price_alert_info">' +
+                                '<div class="d-block">Target: RM' + value + '</div>' +
+                                '<span>08 Dec 2021 01:49 PM</span>' +
+                            '</div>' +
+                            '<div class="price_alert_delete">' +
+                                '<a href="#" class="deletePrice"><i class="fas fa-times-circle"></i></a>' +
+                            '</div>' +
+                        '</div>';
+        var tab = $('a.active').attr('aria-labelledby');
+        $('#' + tab).append(price_data);
+    }
+</script>
+
+<!-- delete gold price alert -->
+<script>
+$(document).on('click', '.deletePrice', function(e){
+    var record = $(this)
+              .closest('.price_alert_data') // goes up in the tree until .info
+    record.remove();
+});
+</script>
+
 <!-- pin input field -->
 <script>
     $('.digit-group').find('input').each(function () {
@@ -737,6 +1044,25 @@
                 "active"); // removing active class from tab
 
             $(".pricechart_tab").hide(); // hiding open tab
+            $(tabid).show(); // show tab
+            $(this).addClass("active"); //  adding active class to clicked tab
+
+        });
+
+    });
+</script>
+
+<!-- pricealert - tab -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#triggered').hide();
+        $(".pricealert_tabs-list li a").click(function () {
+            
+            var tabid = $(this).attr("href");
+            $(".pricealert_tabs-list li a,.pricealert_tabs div.pricealert_tab").removeClass(
+                "active"); // removing active class from tab
+
+            $(".pricealert_tab").hide(); // hiding open tab
             $(tabid).show(); // show tab
             $(this).addClass("active"); //  adding active class to clicked tab
 
